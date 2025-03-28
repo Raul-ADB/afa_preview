@@ -21,6 +21,7 @@ export interface CardInterface {
   project_title: string;
   name: string;
   description: string;
+  cta: string,
   url: string;
   type: string;
   cardNumber: number;

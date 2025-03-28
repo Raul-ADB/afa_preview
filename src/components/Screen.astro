@@ -35,11 +35,12 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
   }
 
   .screen__title {
-    display: inline-block;
-    position: absolute;
-    top: 60%;
-    left: 5%;
-    width: max-content;
+    display: block;
+    position: sticky;
+    width: 92%;
+    max-width: 144rem;
+    margin: 0 auto;
+    top: 70%;
     color: #FFF;
     font-size: 2rem;
     text-transform: uppercase;
