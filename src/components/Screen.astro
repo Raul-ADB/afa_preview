@@ -4,7 +4,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import { useTranslation } from '@/utils/utils';
 import type { ScreenInterface } from '@/types/types';
 
-interface Props extends ScreenInterface {}
+interface Props extends ScreenInterface {};
 const { project_title = '', name = '', image = '', cta = '' } = Astro.props;
 
 const currentLang = Astro.currentLocale || 'es';
@@ -79,4 +79,5 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
     height: 100%;
     filter: grayscale(100%);
   }
+
 </style>
