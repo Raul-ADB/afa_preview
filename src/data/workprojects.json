@@ -1,0 +1,50 @@
+[
+  {
+    "project_id": "P06_GA",
+    "project_title": "GALERÍA AFA",
+    "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112055/portadaAP_cfzkxx.jpg",
+    "project_link": "/photography/"
+  },
+  {
+    "project_id": "P01_PC",
+    "project_title": "PUNTA COLORADA",
+    "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112054/portadaPC_ul7t6i.jpg",
+    "project_link": "punta_colorada/"
+  },
+  {
+    "project_id": "P02_CC",
+    "project_title": "CASA COMPORTA",
+    "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112062/portadaCC_ktjsfj.jpg",
+    "project_link": "casa_comporta/"
+  },
+  {
+    "project_id": "P03_GM",
+    "project_title": "GHOST MARFA",
+    "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112051/portadaGM_epzn2a.png",
+    "project_link": "ghost_marfa/"
+  },
+  {
+    "project_id": "P04_MT",
+    "project_title": "MERCADO TACUBAYA",
+    "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112053/portadaMT_yrbslv.png",
+    "project_link": "mercado_tacubaya/"
+  },
+  {
+    "project_id": "P05_PD",
+    "project_title": "SKECHES, DIAGRAMAS Y MAQUETAS",
+    "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112056/portadaAT_u14b2d.jpg",
+    "project_link": "/prototypes/"
+  },
+  {
+    "project_id": "12",
+    "project_title": "The Palm Dubai - Hospitality Development (Under Development)",
+    "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112188/AFA_Frame_1_zizfcx.png",
+    "project_link": "404"
+  }
+]
+
+
+
+
+
+

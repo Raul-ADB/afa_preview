@@ -1,0 +1,41 @@
+---
+import { languageList } from '@/i18n/ui';
+import { useTranslation } from '@/utils/utils';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const { pageTitle, currentLang } = Astro.props;
+
+interface Props {
+  pageTitle: string;
+  currentLang: string;
+}
+
+const translateUI = useTranslation(currentLang as keyof typeof languageList);
+
+const isActive = (title: string) => pageTitle === title ? 'bold' : '';
+---
+
+<footer class="footer container">
+  <nav class="nav">
+    <div class="nav__options">
+      <ul class="nav__menu">
+        <li>
+          <a class={`nav__link nav__link--gray ${isActive('About')}`} href={getRelativeLocaleUrl(currentLang, "/about")}>{translateUI("nav.about")}</a>
+        </li>
+        <li>
+          <a class={`nav__link nav__link--gray ${isActive('Work')}`} href={getRelativeLocaleUrl(currentLang, "/work")}>{translateUI("nav.work")}</a>
+        </li>
+        <li>
+          <a class={`nav__link nav__link--gray ${isActive('Contact')}`} href={getRelativeLocaleUrl(currentLang, "/contact")}>{translateUI("nav.contact")}</a>
+        </li>
+      </ul>
+      <ul class="nav__contact">
+        <li><h4 class="nav__link--gray">{translateUI("nav.contact").toLocaleUpperCase()}</h4></li>
+        <li><p class="nav__link nav__link--gray">contacto@alonso.com</p></li>
+        <li><p class="nav__link nav__link--gray">@afa.arq</p></li>
+        <li><p class="nav__link nav__link--gray"> </p></li>
+        <li><p class="nav__link nav__link--gray">{translateUI("nav.date")}</p></li>
+      </ul>
+    </div>
+  </nav>
+</footer>

@@ -1,0 +1,72 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import data from '@/data/landing.json';
+import { getRandomNumber } from '@/utils/utils';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const { pics } = data;
+const currentLang = Astro.currentLocale || 'es';
+let backgroundImage = pics[getRandomNumber(pics.length - 1)].url;
+---
+
+<!DOCTYPE html>
+<html lang={currentLang}>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFA</title>
+  <ClientRouter/>
+</head>
+<body>
+
+  <a href={getRelativeLocaleUrl(currentLang, 'home')}>
+    <main class="main">
+      <figure class="main__background">
+        <img src={backgroundImage} class="main__img" alt="Imagen AFA">
+      </figure>
+      <figure class="main__picture">
+        <img src="https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112187/AFA_kqraay.png" class="main__img" alt="Logo AFA">
+      </figure>
+    </main>
+  </a>
+
+</body>
+</html>
+
+<style>
+
+  body {
+    margin: 0;
+  }
+
+  .main {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+  }
+
+  .main__background {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .main__picture {
+    width: 14rem;
+    height: 6.5rem;
+    cursor: pointer;
+  }
+
+  .main__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+</style>

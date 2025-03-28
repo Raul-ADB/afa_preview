@@ -1,0 +1,18 @@
+---
+import TimelineItem from './TimelineItem.astro';
+
+const {timelineTitle} = Astro.props; 
+---
+
+<section class="timeline mb">
+  <h4 class="timeline__title">{timelineTitle}</h4>
+  <slot/>
+</section>
+
+<style>
+  .timeline{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+</style>

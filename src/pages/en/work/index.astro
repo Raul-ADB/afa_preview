@@ -1,0 +1,205 @@
+---
+import type { ProjectInterface } from '@/types/types';
+import Layout from "@/layouts/Layout.astro";
+import projects from "@/data/workprojects.json";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+interface Props extends ProjectInterface {}
+
+const currentLang = Astro.currentLocale || 'es';
+---
+
+<Layout pageTitle='Work'>
+  <main class="main container">
+    <section class="portfolio">
+      <section class="portfolio__elements">
+        {
+          projects.map((p) => (
+            <div class="portfolio__element">
+              <figure id={p.project_id} class="portfolio__picture--mobile">
+                <img src={p.project_image} class="portfolio__img gray-scale" alt={p.project_title}>
+              </figure>
+              <p id={p.project_id} class="portfolio__title">
+                <a href={getRelativeLocaleUrl(currentLang, p.project_link)} class="portfolio__link">{p.project_title}</a>
+              </p>
+            </div>
+          ))
+        }
+      </section>
+      {<section class="portfolio__image">
+        {
+          projects.map((p) => (
+          <figure class="portfolio__picture">
+            <img id={`image_${p.project_id}`} src={p.project_image} class="portfolio__img gray-scale hidden" alt={p.project_title}>
+          </figure>
+          ))
+        }
+      </section>}
+    </section>
+  </main>
+</Layout>
+
+<style>
+
+  .main {
+    min-height: 100vh;
+  }
+
+  @media (width >= 768px) {
+    .main {
+      margin-top: 10rem;
+      min-height: 100vh;
+      height:  calc(100vh - 29.6rem);
+      min-height: 60rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  /* PORTFOLIO */
+
+  .portfolio {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  @media (width >= 768px) {
+    .portfolio {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+  }
+
+  .portfolio__elements {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+    transition: all .5s;
+    z-index: 100;
+  }
+
+  @media (width >= 768px) {
+    .portfolio__elements {
+      height: 100%;
+      width: 50%;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-right: 5rem;
+    }
+  }
+
+  .portfolio__element {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  @media (width >= 768px) {
+    .portfolio__element {
+      width: unset;
+      height: unset;
+      display: unset;
+    }
+  }
+
+  .portfolio__link {
+    display: inline-block;
+    color: #c6c6c6;
+  }
+
+  .portfolio__link:hover {
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+  }
+
+  .portfolio__image {
+    display: none;
+  }
+
+  @media (width >= 768px) {
+    .portfolio__image {
+      display: block;
+      width: 50%;
+      height: 100%;
+      display: grid;
+      justify-content: start;
+      grid-template-areas: "portfolio__picture";
+    }
+  }
+
+  .portfolio__picture {
+    width: 55rem;
+    height: 100%;
+    margin: 0 auto;
+    grid-area: portfolio__picture;
+    overflow: hidden;
+  }
+
+  .portfolio__picture--mobile {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (width >= 768px) {
+    .portfolio__picture--mobile {
+      display: none;
+    }
+  }
+
+  .portfolio__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (width >= 768px) {
+    .portfolio__img--mobile {
+      display: none;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .portfolio__elements:has(#P00_SD:hover) ~ .portfolio__image .portfolio__picture #image_P00_SD {
+    display: block;
+  }
+  .portfolio__elements:has(#P01_PC:hover) ~ .portfolio__image .portfolio__picture #image_P01_PC {
+    display: block;
+  }
+  .portfolio__elements:has(#P02_CC:hover) ~ .portfolio__image .portfolio__picture #image_P02_CC {
+    display: block;
+  }
+  .portfolio__elements:has(#P03_GM:hover) ~ .portfolio__image .portfolio__picture #image_P03_GM {
+    display: block;
+  }
+  .portfolio__elements:has(#P04_MT:hover) ~ .portfolio__image .portfolio__picture #image_P04_MT {
+    display: block;
+  }
+  .portfolio__elements:has(#P05_PD:hover) ~ .portfolio__image .portfolio__picture #image_P05_PD {
+    display: block;
+  }
+  .portfolio__elements:has(#P06_GA:hover) ~ .portfolio__image .portfolio__picture #image_P06_GA {
+    display: block;
+  }
+
+  .gray-scale {
+    filter: grayscale(100%);
+  }
+</style>

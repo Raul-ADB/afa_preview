@@ -1,0 +1,30 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import Layout from '@/layouts/Layout.astro';
+import HeroGallery from '@/components/HeroGallery.astro';
+import type { HeroOptionsInterface } from '@/types/types';
+
+interface Options extends HeroOptionsInterface {};
+
+const hero = 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112055/portadaAP_cfzkxx.jpg';
+const heroAlt = 'Imagen Galería AFA';
+const legend= 'ESTUDIOS DE FORMAS Y ESPACIO';
+const options:Options[] =  [
+  {
+    name: 'Sketches',
+    url: '/prototypes/sketch'
+  },
+  {
+    name: 'Diagramas',
+    url: '/prototypes/diagram'
+  },
+  {
+    name: 'Maquetas',
+    url: '/prototypes/mockup'
+  },
+];
+---
+
+<Layout pageTitle='Photography'>
+  <HeroGallery origin='' legend={legend} hero={hero} heroAlt={heroAlt} options={options}/>
+</Layout>

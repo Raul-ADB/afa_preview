@@ -1,0 +1,76 @@
+
+  {
+    "content": "Established in 2024, AFA is a multidisciplinary studio that blends experimental design with ancestral knowledge. -the firm includes an architectural division, interior design studio and an artistic direction wing to approach project development. Based in Mexico City, creatives take on an international agenda so as to absorb culture, craftsmanship and talent around the world. Alonso’s vision synthesizes anthropological insight—encompassing human behavior, cultural patterns, and the socio-political frameworks of past civilizations—into a design methodology that challenges contemporary paradigms. He draws from the ingenuity of ancient societies, whose achievements remain unparalleled even in an era of unprecedented technological advancement. His research aims for transcendence and translates into a spatial practice that redefines programmatic strategies, scale, materiality, and lighting, fostering environments that subtly yet profoundly shape human experience. Through his work, he invites users to pause, reflect, and engage with their memory and surroundings in a manner that is both intuitive and transformative.",
+    "images": [
+      {
+        "src": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743111912/about01_njtipd.png"
+      },
+      {
+        "src": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743111913/about02_ajeimz.png"
+      },
+      {
+        "src": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743111914/about03_swdwqt.png"
+      },
+      {
+        "src": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743111911/about04_o9qvdb.png"
+      }
+    ],
+    "professionalTimeline": {
+      "timelineTitle": "EXPERIENCIA PROFESIONAL",
+      "timelineElements": [
+        {
+          "title": "The Palm Dubai - Hospitality Under Development",
+          "year": "2025",
+          "tags": ["Master Plan","Hospitality","Residential","Wellness"],
+          "description": "timeline.description1"
+        },
+        {
+          "title": "Punta Colorada, Baja California Sur.",
+          "year": "2024",
+          "tags": ["Residential","Master Plan","Typologies","+1,200 sqm (3)","Pitch"],
+          "description": "timeline.description2"
+        },
+        {
+          "title": "SURFOS - Punta Mita Resort",
+          "year": "2024",
+          "tags": ["Residential","Interiorism","600 sqm"],
+          "description": "timeline.description3"
+        },
+        {
+          "title": "Taller de Arquitectura | Mauricio Rocha",
+          "year": "2024",
+          "tags": ["Residential","Schematic - Executive","450 sqm"],
+          "description": "timeline.description4"
+        }
+      ]
+    },
+    "academyTimeline": {
+      "timelineTitle": "EDUCACIÓN",
+      "timelineElements": [
+        {
+          "title": "PGD, Creative Potential ACTO Arquitectura, Mexico City",
+          "year": "2021",
+          "tags": [],
+          "description": "BArch, Architecture and Urbanism Iberoamerican University, Mexico City"
+        },
+        {
+          "title": "",
+          "year": "2020",
+          "tags": [],
+          "description": "BArch, Architecture and Urbanism - exchange programme. Universidad Politécnica de Cataluña, ETSAB, Barcelona"
+        },
+        {
+          "title": "",
+          "year": "2019",
+          "tags": [],
+          "description": ""
+        },
+        {
+          "title": "BArch, Architecture and Urbanism Iberoamerican University, Mexico City",
+          "year": "2016",
+          "tags": [],
+          "description": ""
+        }
+      ]
+    }
+  }

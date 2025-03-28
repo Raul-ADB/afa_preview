@@ -1,0 +1,46 @@
+---
+import SwipeGallery from '@/components/SwipeGallery.astro';
+import Layout from '@/layouts/Layout.astro';
+import HeroGallery from '@/components/HeroGallery.astro';
+import itemsSketch from '@/data/imagesSketch.json';
+import itemsDiagram from '@/data/imagesDiagram.json';
+import itemsMockup from '@/data/imagesMockup.json';
+import type { HeroOptionsInterface } from '@/types/types';
+
+export function getStaticPaths() {
+  return [
+    {params: {tool: 'sketch'}},
+    {params: {tool: 'diagram'}},
+    {params: {tool: 'mockup'}},
+  ];
+}
+
+interface Options extends HeroOptionsInterface {};
+
+const { tool } = Astro.params;
+
+const items = tool === 'sketch' ? itemsSketch : (tool === 'diagram') ? itemsDiagram : itemsMockup;
+const hero = tool === 'sketch' ? 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112056/portadaAT_u14b2d.jpg' : (tool === 'diagram') ? 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743111605/AD00_vs9wyr.jpg' : 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743111607/AM00_ma88ux.jpg';
+const heroAlt = tool === 'sketch' ? 'Imagen Galería Mobile' : 'Imagen Galería Film';
+const legend= 'ESTUDIOS DE FORMAS Y ESPACIO';
+const options:Options[] =  [
+  {
+    name: 'Sketches',
+    url: '/prototypes/sketch'
+  },
+  {
+    name: 'Diagramas',
+    url: '/prototypes/diagram'
+  },
+  {
+    name: 'Maquetas',
+    url: '/prototypes/mockup'
+  },
+];
+---
+
+<Layout pageTitle={tool}>
+  <HeroGallery origin={tool} legend={legend} hero={hero} heroAlt={heroAlt} options={options}
+  />
+  <SwipeGallery origin={tool} images={items}></SwipeGallery>
+</Layout>

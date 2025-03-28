@@ -1,0 +1,13 @@
+---
+import type { NavItemInterface } from '@/types/types';
+
+interface Props extends NavItemInterface {}
+
+const { title, url, pageTitle } = Astro.props;
+const isActive = pageTitle === title ? 'bold' : '';
+const linkClass = pageTitle === 'Home' ? `nav__link nav__link--dark ${isActive}` : `nav__link ${isActive}`;
+---
+
+<li>
+  <a class={linkClass} href={url}>{title}</a>
+</li>

@@ -1,0 +1,390 @@
+---
+import { languageList } from '@/i18n/ui';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslation } from '@/utils/utils';
+
+const { pageTitle = '', currentLang = 'es' } = Astro.props;
+
+interface Props {
+  pageTitle?: string;
+  currentLang: string;
+}
+
+const translateUI = useTranslation(currentLang as keyof typeof languageList);
+
+let navLogo = pageTitle === "Home" ? 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112193/AFA_LOGO_qv5uwt.png' : 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112194/AFA_LOGO_B_kdrjh6.png'; 
+let navClass = pageTitle === "Home" ? "nav nav--dark" : "nav";
+let navStick = pageTitle === "Home" ? "button__stick" : "button__stick button__stick--dark";
+let navLink = pageTitle === "Home" ? "nav__link nav__link--dark" : "nav__link";
+
+const isActive = (title: string) => pageTitle === title ? 'bold' : '';
+const isLangActive = (lang: string) => currentLang === lang ? 'bold' : '';
+---
+
+<header class="header">
+  <nav id="navbar" class={navClass}>
+    <div class="nav__container">
+      <div class="nav__principal">
+        <div class="nav__logo">
+          <a href={getRelativeLocaleUrl(currentLang, "/home")}>
+            <img src={navLogo} class="nav__img" alt="LOGO AFA">
+          </a>
+        </div>
+        <button id="navMenu" class="nav__button">
+          <span class=`${navStick} button__stick--1`></span>
+          <span class=`${navStick} button__stick--2`></span>
+          <span class=`${navStick} button__stick--3`></span>
+        </button>
+      </div>
+      <div id="navOptions" class="nav__options">
+        <ul class="nav__menu">
+          <li>
+            <a class={`${navLink} ${isActive('About')}`} href={getRelativeLocaleUrl(currentLang, "/about")}>{translateUI("nav.about")}</a>
+          </li>
+          <li>
+            <a class={`${navLink} ${isActive('Work')}`} href={getRelativeLocaleUrl(currentLang, "/work")}>{translateUI("nav.work")}</a>
+          </li>
+          <li>
+            <a class={`${navLink} ${isActive('Contact')}`} href={getRelativeLocaleUrl(currentLang, "/contact")}>{translateUI("nav.contact")}</a>
+          </li>
+        </ul>
+        <ul class="nav__language">
+          {
+            Object.entries(languageList).map(([key]) => {
+              return (
+                <li>
+                  <a class={`${navLink} ${isLangActive(key)}`} href={`/${key}/${pageTitle.toLowerCase()}/`}>{key}</a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+
+  document.addEventListener('astro:page-load', () => {
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+    let navMenu = document.querySelector('#navMenu');
+  
+    if(navbar && navMenu) {
+      window.addEventListener('scroll', () => {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScrollTop) {
+            navbar.style.top = "-100px";
+        } else {
+            navbar.style.top = "0";
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      });
+  
+      navMenu.addEventListener('click', () => {
+        let menu = document.querySelector('#navOptions');
+        if (menu) {    
+          menu.classList.toggle('open');
+          navMenu.classList.toggle('open');
+        }
+      });
+    }
+  });
+</script>
+
+<style is:global>
+
+  .nav__logo {
+    width: 10rem;
+  }
+
+  @media (width >= 768px) {
+    .nav__logo {
+      width: 15rem;
+    }
+  }
+
+  .nav__img {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  .nav {
+    --translate-nav: translateY(0);
+    --translate-menu: translateY(-150%);
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 8rem;
+    font-size: 1.6rem;
+    background-color: #FFF;
+    z-index: 1000;
+    transform: translateY(--translate-nav);
+  }
+
+  @media (width >= 768px) {
+    .nav {
+      height: 10rem;
+    }
+  }
+
+  .nav__container {
+    height: 8rem;
+    width: 92%;
+    max-width: 144rem;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+  }
+
+  @media (width >= 768px) {
+    .nav__container {
+      display: flex;
+      justify-content: space-between;
+      height: 10rem;
+    }
+  }
+
+  .nav__link {
+    display: inline-block;
+    color: #000;
+  }
+
+  .nav__link--dark {
+    color: #FFF;
+  }
+
+  .nav__link--dark:visited {
+    color: #FFF;
+  }
+
+  .nav__button {
+    --translate-stick1: 0 -0.9rem;
+    --translate-stick3: 0 0.9rem;
+    --rotate-stick1: 0;
+    --rotate-stick3: 0;
+    --opacity--stick-2: 1;
+    --transition-sticks: rotate .4s, translate .4s .4s, opacity .4s;
+    
+    width: max-content;
+    height: 3.5rem;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10000;
+    display: grid;
+    align-content: center;
+    grid-template-areas: 'sticks';
+  }
+
+  @media (width >= 768px) {
+    .nav__button {
+      display: none;
+    }
+  }
+
+  .open {
+    --translate-menu: translateY(0);
+    --translate-stick1: 0 0;
+    --translate-stick3: 0 0;
+    --rotate-stick1: 45deg;
+    --rotate-stick3: -45deg;
+    --opacity--stick-2: 0;
+    --transition-sticks: translate .2s, rotate .2s .2s, opacity .2s;
+  }
+
+  .up {
+    --translate-nav: translateY(-100%);
+  }
+
+  .down {
+    --translate-nav: translateY(0);
+  }
+
+  .button__stick {
+    grid-area: sticks;
+    width: 3rem;
+    height: 0.1rem;
+    background-color: #FFF;
+    border-radius: 1rem;
+
+    transition: var(--transition-sticks);
+  }
+
+  .button__stick--dark {
+    background-color: #000;
+  }
+
+  .button__stick--1 {
+    translate: var(--translate-stick1);
+    rotate: var(--rotate-stick1);
+  }
+
+  .button__stick--2 {
+    opacity: var(--opacity--stick-2);
+  }
+
+  .button__stick--3 {
+    translate: var(--translate-stick3);
+    rotate: var(--rotate-stick3);
+  }
+
+  .nav__principal {
+    margin: 0 auto;
+    width: 90%;
+    height: 8rem;
+    padding-block: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 900;
+  }
+
+  @media (width >= 768px) {
+    .nav__principal {
+      justify-content: unset;
+      width: max-content;
+    }
+  }
+
+  .nav__options {
+    width: 100%;
+    padding-block: 3rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    transform: var(--translate-menu);
+    transition: transform .5s;
+  }
+
+  @media (width >= 768px) {
+    .nav__options {
+      transform: unset;
+      background-color: transparent;
+      margin-left: 3rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .nav__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  @media (width >= 768px) {
+    .nav__menu {
+      flex-direction: row;
+    }
+  }
+
+  .nav__language {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .nav__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .nav__contact img {
+    filter: grayscale(50%);
+  }
+
+  .nav--light {
+    background-color: #FFF;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  }
+
+  @media (width >= 768px) {
+    .nav--light {
+      box-shadow: unset;
+    }
+  }
+
+  .nav--dark {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .footer {
+    margin-top: auto;
+    padding-top: 6rem;
+    width: 100%;
+  }
+
+  .footer .nav {
+    position: unset;
+    background-color: unset;
+    width: 100%;
+    align-items: center;
+
+    .nav__logo {
+      filter: brightness(0) saturate(100%) invert(57%) sepia(0%) saturate(574%) hue-rotate(140deg) brightness(95%) contrast(84%);
+    }
+  }
+
+  @media (width >= 768px) {
+    .footer .nav {
+      align-items: flex-start;
+    
+      .nav__logo {
+        filter: brightness(0) saturate(100%) invert(57%) sepia(0%) saturate(574%) hue-rotate(140deg) brightness(95%) contrast(84%);
+      }
+    }
+  }
+
+  .footer .nav__options {
+    transform: unset;
+    background-color: unset;
+    width: 100%;
+    height: max-content;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media (width >= 768px) {
+    .footer .nav__options {
+      margin-left: 0;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  .footer .nav__menu {
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .nav__contact {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    align-items: flex-start;
+  }
+
+  @media (width >= 768px) {
+    .nav__contact {
+      align-items: flex-end;
+    }
+  }
+
+  .nav__link--gray {
+    color: #757475;
+  }
+</style>

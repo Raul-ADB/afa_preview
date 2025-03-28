@@ -1,0 +1,94 @@
+---
+import { languageList } from '@/i18n/ui';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslation } from '@/utils/utils';
+
+const currentLang = Astro.currentLocale || 'es';
+const translateUI = useTranslation(currentLang as keyof typeof languageList);
+const { year, title, tags, description } = Astro.props;
+---
+
+<div class="timeline__element">
+  <div class="element__year">{year}</div>
+  <div class="element__text">
+    <p class="element__title">{title}</p>
+    <p class="element__tags">{tags.join(' / ')}</p>
+    <p class="element__description">{translateUI(description)}</p>
+  </div>
+</div>
+
+<style>
+
+  .timeline__element {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (width >= 992px) {
+    .timeline__element {
+      flex-direction: row;
+      gap: 4rem;
+    }
+  }
+
+  .element__year {
+    width: 10%;
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+
+  .element__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (width >= 768px) {
+    .element__text {
+      width: 85%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: relative;
+    }
+
+    .element__tags {
+      font-style: italic;
+      font-weight: 200;
+    }
+
+    .element__year {
+      position: relative;
+    }
+
+    .element__year::before {
+      content: ' ';
+      display: block;
+      width: 0.1rem;
+      background-color: #000;
+      position: absolute;
+      height: 75%;
+      top: 5rem;
+      left: 2.8rem;
+    }
+
+    .element__year::after {
+      content: '2021';
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      bottom: 2rem;
+    }
+
+    .timeline__element:not(.timeline__element:last-child) .element__year::after {
+      display: none;
+    }
+
+    .timeline__element:last-child .element__year::before {
+      height: 65%;
+    }
+  }
+
+</style>

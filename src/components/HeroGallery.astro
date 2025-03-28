@@ -1,0 +1,84 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { languageList } from '@/i18n/ui';
+import { useTranslation } from '@/utils/utils';
+import type { HeroOptionsInterface } from '@/types/types';
+
+const currentLang = Astro.currentLocale || 'es';
+const translateUI = useTranslation(currentLang as keyof typeof languageList);
+
+const { origin = '', legend = '', hero = '', heroAlt = '', options = [] } = Astro.props;
+
+interface Options extends HeroOptionsInterface {};
+
+interface Props {
+  origin: string;
+  hero: string;
+  heroAlt: string;
+  legend: string;
+  options: Options[];
+}
+---
+
+<section class="hero">
+  <figure class="hero__picture">
+    <img src={hero} class="hero__img" alt={heroAlt}>
+  </figure>
+</section>
+<section class="control container">
+  <div class="control__header">
+    <p class="control__title">{legend}</p>
+    <div class="control__options">
+      {
+        options.map((option: Options) => (
+        <p class={`${origin.charAt(0) === option.name.charAt(0).toLowerCase() ? 'bold' : ''}`}><a href={getRelativeLocaleUrl(currentLang, option.url)}>{option.name}</a></p>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+
+  .hero {
+    width: 100vw;
+    height: 70vh;
+    max-height: 80rem;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+  }
+
+  .hero__picture {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .control {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  .control__header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  .control__options {
+    display: flex;
+    gap: 2.4rem;
+  }
+
+</style>

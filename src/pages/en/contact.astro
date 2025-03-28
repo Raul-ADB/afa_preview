@@ -1,0 +1,258 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import { useTranslation } from '@/utils/utils';
+import { languageList } from "@/i18n/ui";
+
+const currentLang = Astro.currentLocale || 'es';
+const translateUI = useTranslation(currentLang as keyof typeof languageList);
+---
+
+<Layout pageTitle="Contact">
+  <main class="main__contact container">
+    <section class="contact__AFA">
+      <figure class="contact__picture">
+        <img src="https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112188/AFA_Frame_1_zizfcx.png" class="contact__img" alt="AFA Logo">
+      </figure>
+      <figure class="contact__picture">
+        <img src="https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112190/AFA_Frame_2_cfqpda.png" class="contact__img" alt="Metropol Logo">
+      </figure>
+      <figure class="contact__picture">
+        <img src="https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112191/AFA_Frame_3_qjq8tu.png" class="contact__img" alt="Colectivo Logo">
+      </figure>
+    </section>
+    <section class="contact__form">
+      <form id="contactForm" class="form">
+        <legend class="form__title">alonso@fernandezamador.com</legend>
+        <p>{translateUI("contact.legend")}</p>
+        <div class="form__group">
+          <input class="form__input" type="text" id="name" name="name" placeholder=" ">
+          <label class="form__label" for="name">{translateUI("contact.name")}</label>
+          <span class="form__bar"></span>
+        </div>
+        <div class="form__group">
+          <input class="form__input" type="email" id="email" name="email" placeholder=" ">
+          <label class="form__label" for="email">{translateUI("contact.email")}</label>
+          <span class="form__bar"></span>
+        </div>
+        <div class="form__group">
+          <input class="form__input" type="text" id="subject" name="subject" placeholder=" ">
+          <label class="form__label" for="subject">{translateUI("contact.subject")}</label>
+          <span class="form__bar"></span>
+        </div>
+        <div class="">
+          <textarea class="form__input form__input--textarea" id="message" name="message" placeholder={translateUI("contact.message")}></textarea>
+        </div>
+        <button id="button" class="form__submit" type="submit">
+          <span class="submit__text">{translateUI("contact.send")}</span>
+          <span class="submit__loader hidden"></span>
+        </button>
+      </form>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .hidden {
+    display: none;
+  }
+
+  .main__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  @media (width >= 768px) {
+    .main__contact {
+      margin-top: 10rem;
+      flex-direction: row;
+      min-height: 60rem;
+      height:  calc(100vh - 29.6rem);
+      max-height: 95rem;
+    }
+  }
+
+  .contact__AFA {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  @media (width >= 768px) {
+    .contact__AFA {
+      width: 50%;
+      height: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .contact__picture {
+    width: auto;
+  }
+
+  @media (width >= 768px) {
+    .contact__picture {
+      width: max-content;
+      height: auto;
+    }
+  }
+
+  .contact__img {
+    width: auto;
+    height: auto;
+  }
+
+  .contact__form {
+    width: 100%;
+    height: 100%;
+    margin-top: 5rem;
+  }
+
+  @media (width >= 768px) {
+    .contact__form {
+      width: 50%;
+      margin-top: 0;
+    }
+  }
+
+  .form {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    padding-inline: 5%;
+    display: grid;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  @media (width >= 768px) {
+    .form {
+      padding-inline: 0;
+    }
+  }
+
+  .form__title {
+    color: var(--color-gray-900);
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-decoration: underline;
+  }
+
+  .form p {
+    font-weight: 200;
+  }
+
+  .form__group {
+    position: relative;
+    height: 3.88rem;
+  }
+
+  .form__input {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: #c6c6c6;
+    outline: none;
+    border: none;
+    font-size: 1.6rem;
+    padding: 1rem 1rem 1rem 0.5rem;
+    border-bottom: .1rem solid #000;
+    border-radius: none;
+  }
+
+  .form__input--textarea {
+    border: 1px solid #000;
+    resize: none;
+    width: 100%;
+    height: 25rem;
+  }
+
+  .form__input:focus {
+    color: rgb(93, 93, 93);
+  }
+
+  .form__input--textarea::placeholder {
+    color: #757475;
+  }
+
+  .form__input:focus + .form__label, 
+  .form__input:not(:placeholder-shown) + .form__label {
+    color: var(--color-blue-500);
+    transform: scale(0.7) translateY(-3.4rem);
+    transform-origin: top left;
+  }
+
+  .form__input:focus ~ .form__bar {
+    transform: scale(1);
+  }
+
+  .form__bar {
+    position: absolute;
+    border-bottom: .1rem solid var(--color-blue-500);
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    transform: scale(0);
+    transition: 0.5s transform;
+    transform-origin: left bottom;
+  }
+
+  .form__label {
+    position: absolute;
+    color: #49454567;
+    font-size: 1.6rem;
+    top: 1rem;
+    pointer-events: none;
+    transition: 0.5s transform, color 0.3s;
+  }
+
+  .form__submit {
+    width: 18rem;
+    padding-block: 1rem;
+    border: none;
+    background-color: #757475;
+    color: #FFF;
+    outline: none;
+    font-size: 1.6rem;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .submit__loader {
+    grid-area: submit;
+    width: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: l5 1s infinite linear alternate;
+  }
+
+  @keyframes l5 {
+    0%  {
+      box-shadow: 2rem 0 #FFF, -2rem 0 #FFF2;
+      background: #FFF;
+    }
+    33% {
+      box-shadow: 2rem 0 #FFF, -2rem 0 #FFF2;
+      background: #FFF2;
+    }
+    66% {
+      box-shadow: 2rem 0 #FFF2, -2rem 0 #FFF;
+      background: #FFF2
+    }
+    100%{
+      box-shadow: 2rem 0 #FFF2, -2rem 0 #FFF;
+      background: #FFF;
+    }
+  }
+</style>

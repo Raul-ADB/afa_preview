@@ -1,0 +1,27 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import Layout from '@/layouts/Layout.astro';
+import HeroGallery from '@/components/HeroGallery.astro';
+import type { HeroOptionsInterface } from '@/types/types';
+import { optional } from 'astro:schema';
+
+interface Options extends HeroOptionsInterface {};
+
+const hero = 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112055/portadaAP_cfzkxx.jpg';
+const heroAlt = 'Imagen Galería AFA';
+const legend = 'Por el lente de: Alonso Fernández Amador';
+const options:Options[] =  [
+  {
+    name: 'Shot on iPhone',
+    url: '/photography/mobile'
+  },
+  {
+    name: 'Film',
+    url: '/photography/film'
+  },
+];
+---
+
+<Layout pageTitle='Photography'>
+  <HeroGallery origin='' hero={hero} heroAlt={heroAlt} legend={legend} options={options}/>
+</Layout>

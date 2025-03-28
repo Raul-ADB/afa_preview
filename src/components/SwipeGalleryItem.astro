@@ -1,0 +1,69 @@
+---
+import type { ImageInterface } from '@/types/types';
+
+interface Image extends ImageInterface{};
+
+const { name = '', href = '', src ='', width = '', height = '', itemNumber = '' } = Astro.props;
+---
+
+<a 
+  class=`sg__item sg__item--${itemNumber}`
+  href={href}
+  data-cropped="true"
+  data-pswp-width={width}
+  data-pswp-height={height}
+  target="_blank"
+>
+  <img
+    class="sg__img"
+    src={src}
+    alt=`Imagen ${name}`
+  />
+</a>
+
+<style>
+
+  .sg__item {
+    display: inline-block;
+    background-color: #f1f1f1;
+    padding: 1rem;
+  }
+
+  .sg__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sg__item--1 { grid-area: a1;}
+  .sg__item--2 { grid-area: a2;}
+  .sg__item--3 { grid-area: a3;}
+  .sg__item--4 { grid-area: a4;}
+  .sg__item--5 { grid-area: a5;}
+  .sg__item--6 { grid-area: a6;}
+  .sg__item--7 { grid-area: a7;}
+  .sg__item--8 { grid-area: a8;}
+  .sg__item--9 { grid-area: a9;}
+  .sg__item--10 { grid-area: a10;}
+  .sg__item--11 { grid-area: a11;}
+  .sg__item--12 { grid-area: a12;}
+  .sg__item--13 { grid-area: a13;}
+  .sg__item--14 { grid-area: a14;}
+  .sg__item--15 { grid-area: a15;}
+  .sg__item--16 { grid-area: a16;}
+  .sg__item--17 { grid-area: a17;}
+  .sg__item--18 { grid-area: a18;}
+  .sg__item--19 { grid-area: a19;}
+  .sg__item--20 { grid-area: a20;}
+  .sg__item--21 { grid-area: a21;}
+  .sg__item--22 { grid-area: a22;}
+  .sg__item--23 { grid-area: a23;}
+  .sg__item--24 { grid-area: a24;}
+  .sg__item--25 { grid-area: a25;}
+  .sg__item--26 { grid-area: a26;}
+  .sg__item--27 { grid-area: a27;}
+  .sg__item--28 { grid-area: a28;}
+  .sg__item--29 { grid-area: a29;}
+  .sg__item--30 { grid-area: a30;}
+
+</style>
