@@ -21,9 +21,9 @@ const isActive = (title: string) => pageTitle === title ? 'bold' : '';
 const isLangActive = (lang: string) => currentLang === lang ? 'bold' : '';
 
 const currentPath = Astro.url.pathname;
-const getLocalizedPath = (lang: string) => {
+const getLocalizedPath = () => {
   const cleanPath = shortenPath(currentPath);
-  return `/${lang}/${cleanPath}`;
+  return `/${cleanPath}`;
 };
 
 ---
@@ -60,7 +60,7 @@ const getLocalizedPath = (lang: string) => {
             Object.entries(languageList).map(([key]) => {
               return (
                 <li>
-                  <a class={`${navLink} ${isLangActive(key)}`} href={getLocalizedPath(key)}>{key}</a>
+                  <a class={`${navLink} ${isLangActive(key)}`} href={getRelativeLocaleUrl(key, getLocalizedPath())}>{key}</a>
                 </li>
               );
             })
