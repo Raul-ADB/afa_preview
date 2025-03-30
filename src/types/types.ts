@@ -41,6 +41,14 @@ export interface ComponentInterface {
   elements: ScreenInterface[] | CardInterface[] | { key: string; cards: CardInterface[] };
 }
 
+export interface HeroProjectInterface {
+  project_title: string;
+  project_meta: string[];
+  project_description: string[];
+  image_name: string;
+  image_url: string;
+}
+
 export interface HeroOptionsInterface {
   name: string;
   url: string;

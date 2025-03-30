@@ -1,7 +1,7 @@
 ---
 import { languageList } from '@/i18n/ui';
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import { useTranslation } from '@/utils/utils';
+import { useTranslation, shortenPath } from '@/utils/utils';
 
 const { pageTitle = '', currentLang = 'es' } = Astro.props;
 
@@ -19,6 +19,13 @@ let navLink = pageTitle === "Home" ? "nav__link nav__link--dark" : "nav__link";
 
 const isActive = (title: string) => pageTitle === title ? 'bold' : '';
 const isLangActive = (lang: string) => currentLang === lang ? 'bold' : '';
+
+const currentPath = Astro.url.pathname;
+const getLocalizedPath = (lang: string) => {
+  const cleanPath = shortenPath(currentPath);
+  return `/${lang}/${cleanPath}`;
+};
+
 ---
 
 <header class="header">
@@ -53,7 +60,7 @@ const isLangActive = (lang: string) => currentLang === lang ? 'bold' : '';
             Object.entries(languageList).map(([key]) => {
               return (
                 <li>
-                  <a class={`${navLink} ${isLangActive(key)}`} href={`/${key}/${pageTitle.toLowerCase()}/`}>{key}</a>
+                  <a class={`${navLink} ${isLangActive(key)}`} href={getLocalizedPath(key)}>{key}</a>
                 </li>
               );
             })

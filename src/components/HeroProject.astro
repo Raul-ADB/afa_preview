@@ -1,0 +1,192 @@
+---
+import { languageList } from '@/i18n/ui';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslation } from '@/utils/utils';
+
+const currentLang = Astro.currentLocale || 'es';
+const translateUI = useTranslation(currentLang as keyof typeof languageList);
+
+const {project_title = '', project_meta= [], project_description = [], image_name = '', image_url = ''} = Astro.props;
+---
+
+<main class="main">
+  <section class="project container">
+    <div class="project__image">
+      <figure class="project__picture">
+        <img src={image_url} alt={image_name} class="project__img">
+      </figure>
+    </div>
+    <div class="project__content">
+      <div class="project__metadata">
+        <p class="project__title">{project_title}</p>
+        <div class="project__meta">
+          {
+            project_meta.map((meta: string) => (
+              <p>{meta}</p>
+            ))
+          }
+        </div>
+      </div>
+      <div class="project__description">
+        {
+          project_description.map((element: string) => (
+            <p>{translateUI(element)}</p>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+
+  .main {
+    margin-top: 10rem;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+
+  @media (width >= 768px) {
+    .project {
+      flex-direction: row;
+      height: max-content;
+    }
+  }
+
+  @media (width >= 992px) {
+    .project {
+      height: 90rem;
+      gap: 4rem;
+    }
+  }
+
+  @media (width >= 1200px) {
+    .project {
+      gap: 6rem;
+    }
+  }
+
+  .project__image {
+    height: 100%;
+    width: 50%;
+  }
+
+  .project__picture {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .project__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (width >= 768px) {
+    .project__content {
+      height: 100%;
+      width: 50%;
+    }
+  }
+
+  @media (width >= 992px) {
+    .project__content {
+      height: 90%;
+      width: 50%;
+      flex-direction: row;
+      align-self: flex-end;
+    }
+  }
+
+  @media (width >= 1100px) {
+    .project__content {
+      height: 80%;
+      width: 50%;
+      flex-direction: row;
+      align-self: flex-end;
+    }
+  }
+
+  @media (width >= 1200px) {
+    .project__content {
+      height: 75%;
+      width: 50%;
+      flex-direction: row;
+      align-self: flex-end;
+    }
+  }
+
+  @media (width >= 1300px) {
+    .project__content {
+      height: 70%;
+      width: 50%;
+      flex-direction: row;
+      align-self: flex-end;
+    }
+  }
+
+  @media (width >= 1300px) {
+    .project__content {
+      height: 66%;
+      width: 50%;
+      flex-direction: row;
+      align-self: flex-end;
+    }
+  }
+
+  @media (width >= 768px) {
+    .project__metadata {
+      width: 100%;
+    }
+  }
+
+  @media (width >= 992px) {
+    .project__metadata {
+      width: 35%;
+    }
+  }
+
+  .project__description {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @media (width >= 768px) {
+    .project__description {
+      width: 100%;
+    }
+  }
+
+  @media (width >= 992px) {
+    .project__description {
+      width: 65%;
+    }
+  }
+
+  .project__title {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .project__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+</style>

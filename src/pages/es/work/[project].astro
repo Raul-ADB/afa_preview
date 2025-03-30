@@ -1,0 +1,33 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import HeroProject from '@/components/HeroProject.astro';
+import SwipeGallery from '@/components/SwipeGallery.astro';
+import ghostMarfaInfo from '@/data/ghostMarfa.json';
+import casaComportaInfo from '@/data/casaComporta.json';
+import puntaColoradaInfo from '@/data/puntaColorada.json';
+import mercadoTacubayaInfo from '@/data/mercadoTacubaya.json';
+
+export function getStaticPaths() {
+  return [
+    {params: {project: 'casa_comporta'}},
+    {params: {project: 'ghost_marfa'}},
+    {params: {project: 'mercado_tacubaya'}},
+    {params: {project: 'punta_colorada'}},
+  ];
+}
+
+const { project } = Astro.params;
+
+const projectInfoMap = new Map<string, any>([
+  ['ghost_marfa', ghostMarfaInfo],
+  ['casa_comporta', casaComportaInfo],
+  ['punta_colorada', puntaColoradaInfo],
+  ['mercado_tacubaya', mercadoTacubayaInfo],
+]);
+
+const heroInfo = projectInfoMap.get(project);
+---
+
+<Layout pageTitle={project.toLocaleUpperCase().replace("_", " ")}>
+  <HeroProject {...heroInfo} />
+</Layout>

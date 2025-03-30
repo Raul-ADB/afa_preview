@@ -19,8 +19,20 @@ const changeBackgroundImage = (elementContainer: HTMLElement, images: string[]):
   }
 };
 
+const shortenPath = (url: string): string => {
+  const pathParts = url.split("/").filter(part => part !== "");
+  const langIndex = pathParts.findIndex(part => part.length === 2);
+
+  if (langIndex !== -1 && langIndex < pathParts.length - 1) {
+    return pathParts.slice(langIndex + 1).join("/");
+  }
+
+  return url;
+}
+
 export {
   useTranslation,
   getRandomNumber,
-  changeBackgroundImage
+  changeBackgroundImage,
+  shortenPath
 };
