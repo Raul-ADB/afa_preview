@@ -243,7 +243,7 @@ const getLocalizedPath = () => {
 
   .nav__principal {
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
     height: 8rem;
     padding-block: 1.5rem;
     display: flex;
@@ -254,6 +254,7 @@ const getLocalizedPath = () => {
 
   @media (width >= 768px) {
     .nav__principal {
+      width: 90%;
       justify-content: unset;
       width: max-content;
     }
@@ -372,14 +373,20 @@ const getLocalizedPath = () => {
   }
 
   .footer .nav__menu {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     flex-direction: row;
     justify-content: flex-start;
   }
 
+  @media (width >= 768px) {
+    .footer .nav__menu {
+      width: 90%;
+    }
+  }
+
   .nav__contact {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     font-size: 1.4rem;
     align-items: flex-start;
@@ -387,6 +394,7 @@ const getLocalizedPath = () => {
 
   @media (width >= 768px) {
     .nav__contact {
+      width: 90%;
       align-items: flex-end;
     }
   }

@@ -6,6 +6,10 @@ import ghostMarfaInfo from '@/data/ghostMarfa.json';
 import casaComportaInfo from '@/data/casaComporta.json';
 import puntaColoradaInfo from '@/data/puntaColorada.json';
 import mercadoTacubayaInfo from '@/data/mercadoTacubaya.json';
+import imagesGhostMarfa from '@/data/imagesGhostMarfa.json';
+import imagesMercadoTacubaya from '@/data/imagesMercadoTacubaya.json';
+import imagesCasaComporta from '@/data/imagesCasaComporta.json';
+import imagesPuntaColorada from '@/data/imagesPuntaColorada.json';
 
 export function getStaticPaths() {
   return [
@@ -25,9 +29,18 @@ const projectInfoMap = new Map<string, any>([
   ['mercado_tacubaya', mercadoTacubayaInfo],
 ]);
 
+const projectImagesMap = new Map<string, any>([
+  ['ghost_marfa', imagesGhostMarfa],
+  ['casa_comporta', imagesCasaComporta],
+  ['punta_colorada', imagesPuntaColorada],
+  ['mercado_tacubaya', imagesMercadoTacubaya],
+]);
+
 const heroInfo = projectInfoMap.get(project);
+const images = projectImagesMap.get(project);
 ---
 
 <Layout pageTitle={project.toLocaleUpperCase().replace("_", " ")}>
   <HeroProject {...heroInfo} />
+  <SwipeGallery origin={project} images={images} />
 </Layout>

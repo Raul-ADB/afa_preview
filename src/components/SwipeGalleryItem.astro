@@ -3,11 +3,11 @@ import type { ImageInterface } from '@/types/types';
 
 interface Image extends ImageInterface{};
 
-const { name = '', href = '', src ='', width = '', height = '', itemNumber = '' } = Astro.props;
+const { origin='', name = '', href = '', src ='', width = '', height = '', itemNumber = '' } = Astro.props;
 ---
 
 <a 
-  class=`sg__item sg__item--${itemNumber}`
+  class=`sg__item sg__item--${origin} sg__item--${itemNumber}`
   href={href}
   data-cropped="true"
   data-pswp-width={width}
@@ -65,5 +65,454 @@ const { name = '', href = '', src ='', width = '', height = '', itemNumber = '' 
   .sg__item--28 { grid-area: a28;}
   .sg__item--29 { grid-area: a29;}
   .sg__item--30 { grid-area: a30;}
+  .sg__item--31 { grid-area: a31;}
+  .sg__item--32 { grid-area: a32;}
+  .sg__item--33 { grid-area: a33;}
+  .sg__item--34 { grid-area: a34;}
+  .sg__item--35 { grid-area: a35;}
+  .sg__item--36 { grid-area: a36;}
+  .sg__item--37 { grid-area: a37;}
+  .sg__item--38 { grid-area: a38;}
+  .sg__item--39 { grid-area: a39;}
+  .sg__item--40 { grid-area: a40;}
 
+
+  .sg__item--ghost_marfa,
+  .sg__item--mercado_tacubaya {
+    background-color: #fff;
+    padding: 0;
+  }
+
+  .sg__item--mercado_tacubaya.sg__item--2,
+  .sg__item--mercado_tacubaya.sg__item--3,
+  .sg__item--mercado_tacubaya.sg__item--4,
+  .sg__item--mercado_tacubaya.sg__item--6,
+  .sg__item--mercado_tacubaya.sg__item--8,
+  .sg__item--mercado_tacubaya.sg__item--9,
+  .sg__item--mercado_tacubaya.sg__item--10,
+  .sg__item--mercado_tacubaya.sg__item--11,
+  .sg__item--mercado_tacubaya.sg__item--12,
+  .sg__item--mercado_tacubaya.sg__item--13,
+  .sg__item--mercado_tacubaya.sg__item--14,
+  .sg__item--mercado_tacubaya.sg__item--16,
+  .sg__item--mercado_tacubaya.sg__item--17,
+  .sg__item--mercado_tacubaya.sg__item--18 {
+    margin-bottom: 5rem;
+  }
+
+
+  .sg__item--casa_comporta.sg__item--1,
+  .sg__item--casa_comporta.sg__item--2,
+  .sg__item--casa_comporta.sg__item--4,
+  .sg__item--casa_comporta.sg__item--5,
+  .sg__item--casa_comporta.sg__item--23,
+  .sg__item--casa_comporta.sg__item--24,
+  .sg__item--casa_comporta.sg__item--25,
+  .sg__item--casa_comporta.sg__item--26,
+  .sg__item--casa_comporta.sg__item--27,
+  .sg__item--casa_comporta.sg__item--28,
+  .sg__item--casa_comporta.sg__item--29,
+  .sg__item--casa_comporta.sg__item--30,
+  .sg__item--casa_comporta.sg__item--31,
+  .sg__item--casa_comporta.sg__item--32,
+  .sg__item--casa_comporta.sg__item--33,
+  .sg__item--casa_comporta.sg__item--34,
+  .sg__item--casa_comporta.sg__item--35,
+  .sg__item--casa_comporta.sg__item--36 {
+    padding: 0;
+  }
+
+  .sg__item--casa_comporta.sg__item--1 {
+    margin-block: 5rem 2rem;
+    position: relative;
+  }
+
+  .sg__item--casa_comporta.sg__item--1::before {
+    display: block;
+    content: 'SITE';
+    position: absolute;
+    top: -32px;
+    width: 5%;
+    height: 1.8rem;
+  }
+  
+  .sg__item--casa_comporta.sg__item--3 {
+    margin-bottom: 5rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--4,
+  .sg__item--casa_comporta.sg__item--5,
+  .sg__item--casa_comporta.sg__item--24,
+  .sg__item--casa_comporta.sg__item--25,
+  .sg__item--casa_comporta.sg__item--26 {
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sg__item--casa_comporta.sg__item--4::before,
+  .sg__item--casa_comporta.sg__item--5::before {
+    position: absolute;
+    bottom: 26%;
+    display: block;
+    width: max-content;
+    height: 1.6rem;
+    color: #000;
+  }
+
+  .sg__item--casa_comporta.sg__item--4::before {
+    content: 'Volumetric Analysis, Bungalows.';
+  }
+
+  .sg__item--casa_comporta.sg__item--5::before {
+    content: 'Volumetric Analysis, Private Programme';
+  }
+
+  .sg__item--casa_comporta.sg__item--4 .sg__img,
+  .sg__item--casa_comporta.sg__item--5 .sg__img {
+    width: 40rem;
+    height: 40rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--6,
+  .sg__item--casa_comporta.sg__item--7,
+  .sg__item--casa_comporta.sg__item--8,
+  .sg__item--casa_comporta.sg__item--9,
+  .sg__item--casa_comporta.sg__item--10,
+  .sg__item--casa_comporta.sg__item--11,
+  .sg__item--casa_comporta.sg__item--12,
+  .sg__item--casa_comporta.sg__item--13 {
+    position: relative;
+  }
+
+  .sg__item--casa_comporta.sg__item--6::before,
+  .sg__item--casa_comporta.sg__item--7::before,
+  .sg__item--casa_comporta.sg__item--8::before,
+  .sg__item--casa_comporta.sg__item--9::before,
+  .sg__item--casa_comporta.sg__item--10::before,
+  .sg__item--casa_comporta.sg__item--11::before,
+  .sg__item--casa_comporta.sg__item--12::before,
+  .sg__item--casa_comporta.sg__item--13::before,
+  .sg__item--casa_comporta.sg__item--6::after,
+  .sg__item--casa_comporta.sg__item--7::after,
+  .sg__item--casa_comporta.sg__item--8::after,
+  .sg__item--casa_comporta.sg__item--9::after,
+  .sg__item--casa_comporta.sg__item--10::after,
+  .sg__item--casa_comporta.sg__item--11::after,
+  .sg__item--casa_comporta.sg__item--12::after,
+  .sg__item--casa_comporta.sg__item--13::after {
+    position: absolute;
+    display: block;
+    width: 11rem;
+    height: 2.4rem;
+    font-size: 1.8rem;
+    bottom: 10%;
+    color: #000;
+  }
+
+  .sg__item--casa_comporta.sg__item--6::after,
+  .sg__item--casa_comporta.sg__item--7::after,
+  .sg__item--casa_comporta.sg__item--8::after,
+  .sg__item--casa_comporta.sg__item--9::after,
+  .sg__item--casa_comporta.sg__item--10::after,
+  .sg__item--casa_comporta.sg__item--11::after,
+  .sg__item--casa_comporta.sg__item--12::after,
+  .sg__item--casa_comporta.sg__item--13::after {
+    font-size: 1.6rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--6::after,
+  .sg__item--casa_comporta.sg__item--7::after,
+  .sg__item--casa_comporta.sg__item--8::after,
+  .sg__item--casa_comporta.sg__item--9::after,
+  .sg__item--casa_comporta.sg__item--10::after,
+  .sg__item--casa_comporta.sg__item--11::after,
+  .sg__item--casa_comporta.sg__item--12::after,
+  .sg__item--casa_comporta.sg__item--13::after {
+    bottom: 2%;
+  }
+
+  .sg__item--casa_comporta.sg__item--6 .sg__img,
+  .sg__item--casa_comporta.sg__item--7 .sg__img,
+  .sg__item--casa_comporta.sg__item--8 .sg__img,
+  .sg__item--casa_comporta.sg__item--9 .sg__img,
+  .sg__item--casa_comporta.sg__item--10 .sg__img,
+  .sg__item--casa_comporta.sg__item--11 .sg__img,
+  .sg__item--casa_comporta.sg__item--12 .sg__img,
+  .sg__item--casa_comporta.sg__item--13 .sg__img {
+    height: 31.5rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--6,
+  .sg__item--casa_comporta.sg__item--10 {
+    margin-right: 1rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--7,
+  .sg__item--casa_comporta.sg__item--8,
+  .sg__item--casa_comporta.sg__item--11,
+  .sg__item--casa_comporta.sg__item--12 {
+    margin-inline: 1rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--9,
+  .sg__item--casa_comporta.sg__item--13 {
+    margin-left: 1rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--6::before,
+  .sg__item--casa_comporta.sg__item--10::before {
+    content: 'Bungalow 1';
+  }
+
+  .sg__item--casa_comporta.sg__item--7::before,
+  .sg__item--casa_comporta.sg__item--11::before {
+    content: 'Bungalow 2';
+  }
+
+  .sg__item--casa_comporta.sg__item--8::before,
+  .sg__item--casa_comporta.sg__item--12::before {
+    content: 'Bungalow 3';
+  }
+
+  .sg__item--casa_comporta.sg__item--9::before,
+  .sg__item--casa_comporta.sg__item--13::before {
+    content: 'Bungalow 4';
+  }
+
+  .sg__item--casa_comporta.sg__item--6::after,
+  .sg__item--casa_comporta.sg__item--7::after,
+  .sg__item--casa_comporta.sg__item--8::after,
+  .sg__item--casa_comporta.sg__item--9::after {
+    content: 'Model';
+  }
+
+  .sg__item--casa_comporta.sg__item--10::after,
+  .sg__item--casa_comporta.sg__item--11::after,
+  .sg__item--casa_comporta.sg__item--12::after,
+  .sg__item--casa_comporta.sg__item--13::after {
+    content: 'Ground level';
+  }
+
+  .sg__item--casa_comporta.sg__item--10,
+  .sg__item--casa_comporta.sg__item--11,
+  .sg__item--casa_comporta.sg__item--12,
+  .sg__item--casa_comporta.sg__item--13 {
+    margin-bottom: 5rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--14,
+  .sg__item--casa_comporta.sg__item--15,
+  .sg__item--casa_comporta.sg__item--16,
+  .sg__item--casa_comporta.sg__item--17,
+  .sg__item--casa_comporta.sg__item--18,
+  .sg__item--casa_comporta.sg__item--19,
+  .sg__item--casa_comporta.sg__item--20,
+  .sg__item--casa_comporta.sg__item--21,
+  .sg__item--casa_comporta.sg__item--22,
+  .sg__item--casa_comporta.sg__item--24,
+  .sg__item--casa_comporta.sg__item--25,
+  .sg__item--casa_comporta.sg__item--26 {
+    position: relative;
+  }
+
+  .sg__item--casa_comporta.sg__item--14 .sg__img,
+  .sg__item--casa_comporta.sg__item--15 .sg__img,
+  .sg__item--casa_comporta.sg__item--16 .sg__img,
+  .sg__item--casa_comporta.sg__item--17 .sg__img,
+  .sg__item--casa_comporta.sg__item--19 .sg__img,
+  .sg__item--casa_comporta.sg__item--20 .sg__img,
+  .sg__item--casa_comporta.sg__item--21 .sg__img,
+  .sg__item--casa_comporta.sg__item--22 .sg__img {
+    height: 31.5rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--18 .sg__img {
+    height: 92%;
+  }
+
+  .sg__item--casa_comporta.sg__item--14::before,
+  .sg__item--casa_comporta.sg__item--15::before,
+  .sg__item--casa_comporta.sg__item--16::before,
+  .sg__item--casa_comporta.sg__item--17::before,
+  .sg__item--casa_comporta.sg__item--18::before,
+  .sg__item--casa_comporta.sg__item--19::before,
+  .sg__item--casa_comporta.sg__item--20::before,
+  .sg__item--casa_comporta.sg__item--21::before,
+  .sg__item--casa_comporta.sg__item--22::before,
+  .sg__item--casa_comporta.sg__item--14::after,
+  .sg__item--casa_comporta.sg__item--15::after,
+  .sg__item--casa_comporta.sg__item--16::after,
+  .sg__item--casa_comporta.sg__item--17::after,
+  .sg__item--casa_comporta.sg__item--18::after,
+  .sg__item--casa_comporta.sg__item--19::after,
+  .sg__item--casa_comporta.sg__item--20::after,
+  .sg__item--casa_comporta.sg__item--21::after,
+  .sg__item--casa_comporta.sg__item--22::after,
+  .sg__item--casa_comporta.sg__item--24::after,
+  .sg__item--casa_comporta.sg__item--25::after,
+  .sg__item--casa_comporta.sg__item--26::after {
+    position: absolute;
+    display: block;
+    width: max-content;
+    height: 2.4rem;
+    font-size: 1.8rem;
+    bottom: 10%;
+    color: #000;
+  }
+
+  .sg__item--casa_comporta.sg__item--14::after,
+  .sg__item--casa_comporta.sg__item--15::after,
+  .sg__item--casa_comporta.sg__item--16::after,
+  .sg__item--casa_comporta.sg__item--17::after,
+  .sg__item--casa_comporta.sg__item--18::after,
+  .sg__item--casa_comporta.sg__item--19::after,
+  .sg__item--casa_comporta.sg__item--20::after,
+  .sg__item--casa_comporta.sg__item--21::after,
+  .sg__item--casa_comporta.sg__item--22::after {
+    bottom: 2%;
+    content: 'Sketch';
+    font-size: 1.6rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--18::before {
+    bottom: 4rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--18::after {
+    bottom: 1rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--14::before {
+    content: '“CHAIR” - Hardwood, jade and horn.';
+  }
+
+  .sg__item--casa_comporta.sg__item--15::before {
+      content: '“Modular Sofa” - Hardwood';
+    }
+
+  @media (width >= 768px) {
+    .sg__item--casa_comporta.sg__item--15::before {
+      content: '“Modular Sofa” - Hardwood, oak and linen coushions.';
+    }
+  }
+
+  .sg__item--casa_comporta.sg__item--16::before {
+    content: '“Adaptable Dinning Table 01” Hardwood.';
+  }
+
+  .sg__item--casa_comporta.sg__item--17::before {
+    content: '“Adaptable Dinning Table 02” Hardwood';
+  }
+
+  .sg__item--casa_comporta.sg__item--14,
+  .sg__item--casa_comporta.sg__item--16 {
+    margin-right: 1rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--15,
+  .sg__item--casa_comporta.sg__item--17 {
+    margin-left: 1rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--16,
+  .sg__item--casa_comporta.sg__item--17 {
+    margin-bottom: 5rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--15 .sg__img,
+  .sg__item--casa_comporta.sg__item--16 .sg__img {
+    object-position: bottom;
+  }
+
+  .sg__item--casa_comporta.sg__item--17 .sg__img {
+    object-position: top;
+  }
+
+  .sg__item--casa_comporta.sg__item--18::before {
+    content: 'Structural Criteria';
+  }
+
+  .sg__item--casa_comporta.sg__item--19::before {
+    content: 'Press Pavilion Spatial Study';
+  }
+
+  .sg__item--casa_comporta.sg__item--20::before {
+    content: 'Painting Pavilion Spatial Study';
+  }
+
+  .sg__item--casa_comporta.sg__item--19 {
+    margin-bottom: 1rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--20 {
+    margin-top: 1rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--18,
+  .sg__item--casa_comporta.sg__item--20,
+  .sg__item--casa_comporta.sg__item--26,
+  .sg__item--casa_comporta.sg__item--27,
+  .sg__item--casa_comporta.sg__item--28,
+  .sg__item--casa_comporta.sg__item--29,
+  .sg__item--casa_comporta.sg__item--30,
+  .sg__item--casa_comporta.sg__item--31,
+  .sg__item--casa_comporta.sg__item--31,
+  .sg__item--casa_comporta.sg__item--32,
+  .sg__item--casa_comporta.sg__item--33,
+  .sg__item--casa_comporta.sg__item--34,
+  .sg__item--casa_comporta.sg__item--35 {
+    margin-bottom: 5rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--21::before {
+    content: 'Facade Study';
+  }
+
+  .sg__item--casa_comporta.sg__item--22::before {
+    content: 'Pavilion Configuration Study';
+  }
+
+  .sg__item--casa_comporta.sg__item--21 .sg__img,
+  .sg__item--casa_comporta.sg__item--22 .sg__img {
+    object-position: top right;
+  }
+
+  .sg__item--casa_comporta.sg__item--21 {
+    margin-right: 1rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--22 {
+    margin-left: 1rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--21,
+  .sg__item--casa_comporta.sg__item--22,
+  .sg__item--casa_comporta.sg__item--23 {
+    margin-bottom: 10rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--24 .sg__img,
+  .sg__item--casa_comporta.sg__item--25 .sg__img,
+  .sg__item--casa_comporta.sg__item--26 .sg__img {
+    width: 38rem;
+    height: 23rem;
+  }
+
+  .sg__item--casa_comporta.sg__item--24::after {
+    bottom: 0;
+    content: 'BUNGALOW 2';
+  }
+
+  .sg__item--casa_comporta.sg__item--25::after {
+    bottom: 0;
+    content: 'MAIN PAVILLON';
+  }
+
+  .sg__item--casa_comporta.sg__item--26::after {
+    bottom: 0;
+    content: 'TALLER';
+  }
 </style>

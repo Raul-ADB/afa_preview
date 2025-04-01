@@ -16,7 +16,7 @@ interface Props {
 <div class=`swipe-gallery swipe-gallery--${origin} container` id={`gallery-${origin}`}>
   {
     images.map((item) => (
-      <SwipeGalleryItem {...item} />
+      <SwipeGalleryItem origin={origin} {...item} />
     ))
   }
 </div>
@@ -162,16 +162,116 @@ interface Props {
     }
   }
 
-/*   .sg__item {
-    display: inline-block;
-    background-color: #f1f1f1;
-    padding: 1rem;
+  .swipe-gallery--ghost_marfa {
+    grid-template-rows: repeat(12, 40rem);
+    grid-template-areas:
+    "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9" "a10" "a11" "a12"
+    ;
   }
 
-  .sg__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  } */
+  @media (width >= 768px) {
+    .swipe-gallery--ghost_marfa {
+      gap: 0;
+      row-gap: 5rem;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(8, 90rem);
+      grid-template-areas:
+      "a1 a1 a1 a1 a1 a1"
+      "a2 a2 a2 a3 a3 a3"
+      "a4 a4 a4 a5 a5 a5"
+      "a6 a6 a6 a6 a6 a6"
+      "a7 a7 a7 a7 a7 a7"
+      "a8 a8 a8 a9 a9 a9"
+      "a10 a10 a10 a11 a11 a11"
+      "a12 a12 a12 _ _ _"
+      ;
+    }
+  }
 
+  .swipe-gallery--mercado_tacubaya {
+    grid-template-rows: repeat(19, 40rem);
+    grid-template-areas:
+    "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9" "a10" "a11" "a12" "a13" "a14" "a15" "a16" "a17" "a18" "a19"
+    ;
+  }
+
+  @media (width >= 768px) {
+    .swipe-gallery--mercado_tacubaya {
+      gap: 0;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(18, 45rem);
+      grid-template-areas:
+      "a1 a1 a1 a2 a2 a2"
+      "a3 a3 a3 a2 a2 a2"
+      "a4 a4 a4 a5 a5 a5"
+      "a4 a4 a4 a6 a6 a6"
+      "a7 a7 a7 a8 a8 a8"
+      "a9 a9 a9 a8 a8 a8"
+      "a10 a10 a10 a11 a11 a11"
+      "a10 a10 a10 a11 a11 a11"
+      "a12 a12 a12 a13 a13 a13"
+      "a12 a12 a12 a13 a13 a13"
+      "a14 a14 a14 a15 a15 a15"
+      "a14 a14 a14 a16 a16 a16"
+      "a17 a17 a17 a17 a17 a17"
+      "a17 a17 a17 a17 a17 a17"
+      "a18 a18 a18 a18 a18 a18"
+      "a18 a18 a18 a18 a18 a18"
+      "a19 a19 a19 a19 a19 a19"
+      "a19 a19 a19 a19 a19 a19"
+      ;
+    }
+  }
+
+  .swipe-gallery--casa_comporta {
+    grid-template-rows: repeat(36, 40rem);
+    grid-template-areas:
+    "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9" "a10" "a11" "a12" "a13" "a14" "a15" "a16" "a17" "a18" "a19" "a20" "a21" "a22" "a23" "a24" "a25" "a26" "a27" "a28" "a29" "a30" "a31" "a32" "a33" "a34" "a35" "a36"
+    ;
+  }
+
+  @media (width >= 768px) {
+    .swipe-gallery--casa_comporta {
+      gap: 0;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 37rem 30rem 23rem 90rem 90rem 40rem 45rem 40rem 45rem 40rem 45rem 50rem 80rem 30rem 30rem 35rem 90rem 90rem 80rem 90rem 90rem 90rem 90rem 90rem 90rem;
+      grid-template-areas:
+      "a1 a1 a1 a1 a1 a1 a1 a1"
+      "a2 a2 a2 a2 a2 a2 a2 a2"
+
+      "__ __ __ __ __ __ __ __"
+
+      "a3 a3 a3 a3 a3 a3 a3 a3"
+
+      "a4 a4 a4 a4 a5 a5 a5 a5"
+
+      "a6 a6 a7 a7 a8 a8 a9 a9"
+      "a10 a10 a11 a11 a12 a12 a13 a13"
+
+      "a14 a14 a14 a14 a15 a15 a15 a15"
+      "a16 a16 a16 a16 a17 a17 a17 a17"
+
+      "a18 a18 a18 a18 a19 a19 a19 a19"
+      "a18 a18 a18 a18 a20 a20 a20 a20"
+
+      "a21 a21 a21 a21 a22 a22 a22 a22"
+
+      "a23 a23 a23 a23 a23 a23 a23 a23"
+
+      "a24 a24 a24 a24 a27 a27 a27 a27"
+      "a25 a25 a25 a25 a27 a27 a27 a27"
+      "a26 a26 a26 a26 a27 a27 a27 a27"
+
+      "a28 a28 a28 a28 a28 a28 a28 a28"
+      "a29 a29 a29 a29 a29 a29 a29 a29"
+      "a30 a30 a30 a30 a30 a30 a30 a30"
+      "a31 a31 a31 a31 a31 a31 a31 a31"
+      "a32 a32 a32 a32 a32 a32 a32 a32"
+      "a33 a33 a33 a33 a33 a33 a33 a33"
+      "a34 a34 a34 a34 a34 a34 a34 a34"
+      "a35 a35 a35 a35 a35 a35 a35 a35"
+      "a36 a36 a36 a36 a36 a36 a36 a36"
+      ;
+    }
+  }
 </style>

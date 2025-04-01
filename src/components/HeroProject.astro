@@ -42,15 +42,15 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
 
   .main {
     margin-top: 10rem;
+    margin-bottom: 5rem;
   }
 
   .project {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 2.4rem;
   }
-  
 
   @media (width >= 768px) {
     .project {
@@ -74,7 +74,14 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
 
   .project__image {
     height: 100%;
-    width: 50%;
+    width: 100%;
+  }
+
+  @media (width >= 768px) {
+    .project__image {
+      align-self: flex-start;
+      width: 50%;
+    }
   }
 
   .project__picture {
@@ -92,7 +99,7 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
   .project__content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.4rem;
   }
 
   @media (width >= 768px) {
@@ -147,10 +154,9 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
     }
   }
 
-  @media (width >= 768px) {
-    .project__metadata {
-      width: 100%;
-    }
+  .project__metadata {
+    width: 100%;
+    gap: 1rem;
   }
 
   @media (width >= 992px) {
