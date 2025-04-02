@@ -16,7 +16,7 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
     <h2>{ project_title === "Pantallas Completas" ? "" : project_title }</h2>
   </a>
   <figure class="screen__picture">
-    <img src={image} class="screen__image" alt={`Imagen de ${name}`} />	
+    <img src={image} class="screen__image" alt={`Imagen de ${name}`} loading="lazy" >	
   </figure>
 </div>
 

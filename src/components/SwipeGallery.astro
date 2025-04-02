@@ -274,4 +274,48 @@ interface Props {
       ;
     }
   }
+
+  .swipe-gallery--punta_colorada {
+    grid-template-rows: repeat(36, 40rem);
+    grid-template-areas:
+    "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9" "a10" "a11" "a12" "a13" "a14" "a15" "a16" "a17" "a18" "a19" "a20" "a21" "a22" "a23" "a24" "a25" "a26" "a27" "a28" "a29" "a30" "a31" "a32" "a33" "a34" "a35" "a36"
+    ;
+  }
+
+  @media (width >= 768px) {
+    .swipe-gallery--punta_colorada {
+      row-gap: 5rem;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(10, 80rem) repeat(2, 40rem) repeat(15, 80rem);
+      grid-template-areas:
+      "a1 a1 a1 a2 a2 a2"
+      "a3 a3 a3 a3 a3 a3"
+      "a4 a4 a4 a5 a5 a5"
+      "t1 t1 t1 a6 a6 a6"
+      "a7 a7 a7 a8 a8 a8"
+      "a9 a9 a9 a10 a10 a10"
+      "t2 t2 t2 a11 a11 a11"
+      "t3 t3 t3 a12 a12 a12"
+      "t4 t4 t4 a13 a13 a13"
+      "a14 a14 a14 a14 a14 a14"
+      "a15 a15 a15 a16 a16 a16"
+      "a17 a17 a17 a18 a18 a18"
+      "a19 a19 a19 a20 a20 a20"
+      "a21 a21 a21 a21 a21 a21"
+      "a22 a22 a22 a23 a23 a23"
+      "a24 a24 a24 a25 a25 a25"
+      "a26 a26 a26 a26 a26 a26"
+      "a27 a27 a27 a27 a27 a27"
+      "a28 a28 a28 a28 a28 a28"
+      "a29 a29 a29 a29 a29 a29"
+      "a30 a30 a30 a30 a30 a30"
+      "a31 a31 a31 a31 a31 a31"
+      "a32 a32 a32 a32 a32 a32"
+      "a33 a33 a33 a33 a33 a33"
+      "a34 a34 a34 a34 a34 a34"
+      "a35 a35 a35 a35 a35 a35"
+      "a36 a36 a36 a36 a36 a36"
+      ;
+    }
+  }
 </style>

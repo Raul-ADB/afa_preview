@@ -18,6 +18,7 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
     class="sg__img"
     src={src}
     alt=`Imagen ${name}`
+    loading="lazy"
   />
 </a>
 
@@ -78,7 +79,8 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
 
 
   .sg__item--ghost_marfa,
-  .sg__item--mercado_tacubaya {
+  .sg__item--mercado_tacubaya,
+  .sg__item--punta_colorada {
     background-color: #fff;
     padding: 0;
   }
@@ -515,4 +517,121 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
     bottom: 0;
     content: 'TALLER';
   }
+
+  .sg__item--punta_colorada.sg__item--1,
+  .sg__item--punta_colorada.sg__item--2,
+  .sg__item--punta_colorada.sg__item--4,
+  .sg__item--punta_colorada.sg__item--5,
+  .sg__item--punta_colorada.sg__item--6,
+  .sg__item--punta_colorada.sg__item--7,
+  .sg__item--punta_colorada.sg__item--8,
+  .sg__item--punta_colorada.sg__item--15,
+  .sg__item--punta_colorada.sg__item--16,
+  .sg__item--punta_colorada.sg__item--17,
+  .sg__item--punta_colorada.sg__item--18,
+  .sg__item--punta_colorada.sg__item--20,
+  .sg__item--punta_colorada.sg__item--21,
+  .sg__item--punta_colorada.sg__item--24,
+  .sg__item--punta_colorada.sg__item--25 {
+    margin: 0 auto;
+    align-self: center;
+    position: relative;
+  }
+
+  .sg__item--punta_colorada.sg__item--1,
+  .sg__item--punta_colorada.sg__item--2 {
+    width: 80%;
+  }
+
+  .sg__item--punta_colorada.sg__item--4 {
+    width: 51rem;
+    height: 40rem;
+  }
+  
+  .sg__item--punta_colorada.sg__item--5 {
+    width: 30rem;
+    height: 40rem;
+  }
+
+  .sg__item--punta_colorada.sg__item--6,
+  .sg__item--punta_colorada.sg__item--7,
+  .sg__item--punta_colorada.sg__item--8 {
+    width: 30rem;
+    height: 76rem;
+  }
+
+  .sg__item--punta_colorada.sg__item--15,
+  .sg__item--punta_colorada.sg__item--16,
+  .sg__item--punta_colorada.sg__item--17,
+  .sg__item--punta_colorada.sg__item--18 {
+    width: 95%;
+    height: 39rem;
+  }
+  
+  .sg__item--punta_colorada.sg__item--24, 
+  .sg__item--punta_colorada.sg__item--25 {
+    width: 95%;
+    height: 37rem;
+  }
+
+  .sg__item--punta_colorada.sg__item--4::before,
+  .sg__item--punta_colorada.sg__item--5::before, 
+  .sg__item--punta_colorada.sg__item--15::before, 
+  .sg__item--punta_colorada.sg__item--16::before, 
+  .sg__item--punta_colorada.sg__item--17::before, 
+  .sg__item--punta_colorada.sg__item--18::before,
+  .sg__item--punta_colorada.sg__item--24::before,
+  .sg__item--punta_colorada.sg__item--25::before {
+    position: absolute;
+    display: block;
+    width: max-content;
+    height: 2.4rem;
+    font-size: 1.8rem;
+    bottom: -3.5rem;
+    color: #000;
+  }
+
+  .sg__item--punta_colorada.sg__item--4::before {
+    font-size: 1rem;
+    right: 0;
+    content: 'SHIZUKO YOSHIKAWA, BOOK COVER AND COMPOSITION ON THE SUN.';
+  }
+
+  .sg__item--punta_colorada.sg__item--5::before {
+    font-size: 1rem;
+    right: 0;
+    max-width: 30rem;
+    text-wrap: wrap;
+    text-align: end;
+    content: 'TEMPLE OF POSEIDON, SICILY, ALONSO FERNÁNDEZ AMADOR, 2020.';
+  }
+
+  .sg__item--punta_colorada.sg__item--15::before {
+    top: -2.4rem;
+    content: 'SITE PLAN';
+  }
+
+  .sg__item--punta_colorada.sg__item--16::before {
+    top: -2.4rem;
+    content: 'LEVEL - 1';
+  }
+
+  .sg__item--punta_colorada.sg__item--17::before {
+    top: -2.4rem;
+    content: 'GROUND FLOOR';
+  }
+
+  .sg__item--punta_colorada.sg__item--18::before {
+    top: -2.4rem;
+    content: 'LEVEL - 3';
+  }
+
+  .sg__item--punta_colorada.sg__item--24::before {
+    content: 'SITE PLAN';
+  }
+
+  .sg__item--punta_colorada.sg__item--25::before {
+    content: 'LEVEL - 1';
+  }
+
 </style>

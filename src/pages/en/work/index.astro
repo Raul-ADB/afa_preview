@@ -17,7 +17,7 @@ const currentLang = Astro.currentLocale || 'es';
           projects.map((p) => (
             <div class="portfolio__element">
               <figure id={p.project_id} class="portfolio__picture--mobile">
-                <img src={p.project_image} class="portfolio__img gray-scale" alt={p.project_title}>
+                <img src={p.project_image} class="portfolio__img gray-scale" alt={p.project_title} loading="lazy" >
               </figure>
               <p id={p.project_id} class="portfolio__title">
                 <a href={getRelativeLocaleUrl(currentLang, p.project_link)} class="portfolio__link">{p.project_title}</a>
@@ -30,7 +30,7 @@ const currentLang = Astro.currentLocale || 'es';
         {
           projects.map((p) => (
           <figure class="portfolio__picture">
-            <img id={`image_${p.project_id}`} src={p.project_image} class="portfolio__img gray-scale hidden" alt={p.project_title}>
+            <img id={`image_${p.project_id}`} src={p.project_image} class="portfolio__img gray-scale hidden" alt={p.project_title} loading="lazy" >
           </figure>
           ))
         }

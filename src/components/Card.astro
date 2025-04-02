@@ -13,7 +13,7 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
 
 <div class={`card card--${cardNumber} card--${type}`}>
   <figure class="card__picture">
-    <img src={url} class="card__image" alt={`Imagen ${name}`}>
+    <img src={url} class="card__image" alt={`Imagen ${name}`} loading="lazy" >
   </figure>
   <div class="card__body">
     <a class="card__link" href={getRelativeLocaleUrl(currentLang, cta)}>
