@@ -1,64 +1,59 @@
 ---
-import { languageList } from '@/i18n/ui';
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import { useTranslation } from '@/utils/utils';
 import type { ScreenInterface } from '@/types/types';
 
 interface Props extends ScreenInterface {};
 const { project_title = '', name = '', image = '', cta = '' } = Astro.props;
 
 const currentLang = Astro.currentLocale || 'es';
-const translateUI = useTranslation(currentLang as keyof typeof languageList);
 ---
 
-<div class="screen">
+<div class="screen" data-image={image}>
   <a class="screen__title" href={getRelativeLocaleUrl(currentLang, cta)}>
     <h2>{ project_title === "Pantallas Completas" ? "" : project_title }</h2>
   </a>
-  <figure class="screen__picture">
-    <img src={image} class="screen__image" alt={`Imagen de ${name}`} loading="lazy" >	
-  </figure>
 </div>
 
-<style>
-  .screen {
-    width: 100%;
-    min-height: 100vh;
-    max-height: 100rem;
-    height: max-content;
-    position: relative;
-  }
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const screens = document.querySelectorAll('.screen');
+    if (screens) {
+      screens.forEach(el => {
+        const imageUrl = el.getAttribute('data-image');
+        if (imageUrl) {
+          (el as HTMLElement).style.backgroundImage = `url('${imageUrl}')`;
+        }
+      });
+    }
+  });
+</script>
 
-  .screen__picture {
+<style>
+
+  .screen {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     width: 100%;
-    height: 100rem;
+    height: 100vh;
+    max-height: 100rem;
+    position: relative;
   }
 
   .screen__title {
     display: block;
     position: sticky;
     width: 92%;
+    padding-bottom: 100px;
+    top: 70%;
     max-width: 144rem;
     margin: 0 auto;
-    top: 70%;
     color: #FFF;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-transform: uppercase;
     text-decoration: underline;
     z-index: 1000;
-  }
 
-  @media (width >= 768px) {
-    .screen__title {
-      font-size: 2.5rem;
-    }
-  }
-
-  @media (width >= 992px) {
-    .screen__title {
-      font-size: 2rem;
-      letter-spacing: .2rem;
-    }
   }
 
   .screen__title--gray {
@@ -68,17 +63,6 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
 
   .screen__title--black {
     color: #000;
-  }
-
-  .screen__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .image__gray {
-    height: 100%;
-    filter: grayscale(100%);
   }
 
 </style>
