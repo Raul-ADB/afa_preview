@@ -1,12 +1,15 @@
 ---
 import type { ProjectInterface } from '@/types/types';
+import { languageList } from '@/i18n/ui';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslation } from '@/utils/utils';
 import Layout from "@/layouts/Layout.astro";
 import projects from "@/data/workprojects.json";
-import { getRelativeLocaleUrl } from "astro:i18n";
 
 interface Props extends ProjectInterface {}
 
 const currentLang = Astro.currentLocale || 'es';
+const translateUI = useTranslation(currentLang as keyof typeof languageList);
 ---
 
 <Layout pageTitle='Work'>
@@ -20,7 +23,7 @@ const currentLang = Astro.currentLocale || 'es';
                 <img src={p.project_image} class="portfolio__img gray-scale" alt={p.project_title} loading="lazy" >
               </figure>
               <p class={`portfolio__title ${p.project_id}`}>
-                <a href={getRelativeLocaleUrl(currentLang, p.project_link)} class="portfolio__link">{p.project_title}</a>
+                <a href={getRelativeLocaleUrl(currentLang, p.project_link)} class="portfolio__link">{p.project_title === 'Fotografía AFA' ? translateUI("afa.work") : p.project_title }</a>
               </p>
             </div>
           ))

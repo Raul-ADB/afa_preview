@@ -1,16 +1,19 @@
 ---
+import { languageList } from '@/i18n/ui';
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslation } from '@/utils/utils';
 import type { ScreenInterface } from '@/types/types';
 
 interface Props extends ScreenInterface {};
 const { project_title = '', name = '', image = '', cta = '' } = Astro.props;
 
 const currentLang = Astro.currentLocale || 'es';
+const translateUI = useTranslation(currentLang as keyof typeof languageList);
 ---
 
 <div class="screen" data-image={image}>
   <a class="screen__title" href={getRelativeLocaleUrl(currentLang, cta)}>
-    <h2>{ project_title === "Pantallas Completas" ? "" : project_title }</h2>
+    <h2>{ project_title === "Fotografía AFA" ? translateUI("afa.work") : project_title }</h2>
   </a>
 </div>
 
