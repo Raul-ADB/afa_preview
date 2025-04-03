@@ -29,6 +29,7 @@ const getLocalizedPath = () => {
 ---
 
 <header class="header">
+  <div id="sentinel"></div>
   <nav id="navbar" class={navClass}>
     <div class="nav__container">
       <div class="nav__principal">
@@ -75,20 +76,25 @@ const getLocalizedPath = () => {
 
   document.addEventListener('astro:page-load', () => {
     let lastScrollTop = 0;
-    const navbar = document.getElementById('navbar');
-    let navMenu = document.querySelector('#navMenu');
-  
-    if(navbar && navMenu) {
+    const sentinel = document.querySelector('#sentinel') as HTMLElement;
+    const navbar = document.querySelector('#navbar') as HTMLElement;
+    let navMenu = document.querySelector('#navMenu') as HTMLElement;
+
+    if (navbar && navMenu && sentinel) {
       window.addEventListener('scroll', () => {
         let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        if (currentScroll > lastScrollTop) {
+
+        if (currentScroll > 500) {
+          if (currentScroll > lastScrollTop) {
             navbar.style.top = "-100px";
-        } else {
+          } else {
             navbar.style.top = "0";
+          }
         }
+
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
       });
-  
+
       navMenu.addEventListener('click', () => {
         let menu = document.querySelector('#navOptions');
         if (menu) {    
@@ -96,11 +102,31 @@ const getLocalizedPath = () => {
           navMenu.classList.toggle('open');
         }
       });
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          console.log('Is intersecting:', entry.isIntersecting);
+          if (!entry.isIntersecting) {
+            navbar.classList.add('nav--scrolled');
+          } else {
+            navbar.classList.remove('nav--scrolled');
+          }
+        },
+        { rootMargin: '250px 0px 0px 0px' }
+      );
+
+      observer.observe(sentinel);
     }
   });
+
 </script>
 
 <style is:global>
+
+  #sentinel {
+    height: 1px;
+    width: 100%;
+  }
 
   .nav__logo {
     width: 10rem;
@@ -137,6 +163,17 @@ const getLocalizedPath = () => {
     .nav {
       height: 10rem;
     }
+  }
+
+  .nav--dark {
+    background-color: transparent;
+  }
+
+  .nav--scrolled {
+    background-color: #000;
+    animation-direction:;
+    animation-fill-mode: both;
+    transition: background-color 0.3s ease;
   }
 
   .nav__container {
@@ -315,17 +352,12 @@ const getLocalizedPath = () => {
 
   .nav--light {
     background-color: #FFF;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   }
 
   @media (width >= 768px) {
     .nav--light {
       box-shadow: unset;
     }
-  }
-
-  .nav--dark {
-    background-color: rgba(0, 0, 0, 0.1);
   }
 
   .footer {
