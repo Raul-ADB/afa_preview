@@ -1,7 +1,7 @@
 [
   {
-    "project_id": "P06_GA",
-    "project_title": "GALERÍA AFA",
+    "project_id": "P00_AP",
+    "project_title": "AFA PHOTOGRAPHY",
     "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112055/portadaAP_cfzkxx.jpg",
     "project_link": "/photography/"
   },
@@ -30,15 +30,15 @@
     "project_link": "work/mercado_tacubaya/"
   },
   {
-    "project_id": "P05_PD",
+    "project_id": "P00_SDM",
     "project_title": "SKECHES, DIAGRAMAS Y MAQUETAS",
     "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112056/portadaAT_u14b2d.jpg",
     "project_link": "/prototypes/"
   },
   {
-    "project_id": "12",
+    "project_id": "P05_TPD",
     "project_title": "The Palm Dubai - Hospitality Development (Under Development)",
-    "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112051/portadaGM_epzn2a.png",
+    "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112187/AFA_kqraay.png",
     "project_link": "404"
   }
 ]

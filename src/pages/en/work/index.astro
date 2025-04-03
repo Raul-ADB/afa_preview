@@ -19,7 +19,7 @@ const currentLang = Astro.currentLocale || 'es';
               <figure id={p.project_id} class="portfolio__picture--mobile">
                 <img src={p.project_image} class="portfolio__img gray-scale" alt={p.project_title} loading="lazy" >
               </figure>
-              <p id={p.project_id} class="portfolio__title">
+              <p class={`portfolio__title ${p.project_id}`}>
                 <a href={getRelativeLocaleUrl(currentLang, p.project_link)} class="portfolio__link">{p.project_title}</a>
               </p>
             </div>
@@ -177,29 +177,46 @@ const currentLang = Astro.currentLocale || 'es';
     display: block;
   }
 
-  .portfolio__elements:has(#P00_SD:hover) ~ .portfolio__image .portfolio__picture #image_P00_SD {
+  .portfolio__elements:has(.P00_AP:hover) ~ .portfolio__image .portfolio__picture #image_P00_AP {
     display: block;
   }
-  .portfolio__elements:has(#P01_PC:hover) ~ .portfolio__image .portfolio__picture #image_P01_PC {
+  .portfolio__elements:has(.P01_PC:hover) ~ .portfolio__image .portfolio__picture #image_P01_PC {
     display: block;
   }
-  .portfolio__elements:has(#P02_CC:hover) ~ .portfolio__image .portfolio__picture #image_P02_CC {
+  .portfolio__elements:has(.P02_CC:hover) ~ .portfolio__image .portfolio__picture #image_P02_CC {
     display: block;
   }
-  .portfolio__elements:has(#P03_GM:hover) ~ .portfolio__image .portfolio__picture #image_P03_GM {
+  .portfolio__elements:has(.P03_GM:hover) ~ .portfolio__image .portfolio__picture #image_P03_GM {
     display: block;
   }
-  .portfolio__elements:has(#P04_MT:hover) ~ .portfolio__image .portfolio__picture #image_P04_MT {
+  .portfolio__elements:has(.P04_MT:hover) ~ .portfolio__image .portfolio__picture #image_P04_MT {
     display: block;
   }
-  .portfolio__elements:has(#P05_PD:hover) ~ .portfolio__image .portfolio__picture #image_P05_PD {
+  .portfolio__elements:has(.P00_SDM:hover) ~ .portfolio__image .portfolio__picture #image_P00_SDM {
     display: block;
   }
-  .portfolio__elements:has(#P06_GA:hover) ~ .portfolio__image .portfolio__picture #image_P06_GA {
+  .portfolio__elements:has(.P05_TPD:hover) ~ .portfolio__image .portfolio__picture #image_P05_TPD {
     display: block;
   }
 
   .gray-scale {
     filter: grayscale(100%);
+  }
+
+  #P05_TPD {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dddddd;
+    
+    .portfolio__img {
+      height: auto;
+    }
+  }
+
+  @media (width >=768px) {
+    #P05_TPD {
+      display: none;
+    }
   }
 </style>
