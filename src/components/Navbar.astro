@@ -13,7 +13,7 @@ interface Props {
 const translateUI = useTranslation(currentLang as keyof typeof languageList);
 
 let navLogo = pageTitle === "Home" ? 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112193/AFA_LOGO_qv5uwt.png' : 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112194/AFA_LOGO_B_kdrjh6.png'; 
-let navClass = pageTitle === "Home" ? "nav nav--dark" : "nav";
+let navClass = pageTitle === "Home" ? "nav nav--dark" : "nav nav--normal";
 let navStick = pageTitle === "Home" ? "button__stick" : "button__stick button__stick--dark";
 let navLink = pageTitle === "Home" ? "nav__link nav__link--dark" : "nav__link";
 
@@ -78,17 +78,20 @@ const getLocalizedPath = () => {
     let lastScrollTop = 0;
     const sentinel = document.querySelector('#sentinel') as HTMLElement;
     const navbar = document.querySelector('#navbar') as HTMLElement;
-    let navMenu = document.querySelector('#navMenu') as HTMLElement;
+    const navOptions = document.querySelector('#navOptions') as HTMLElement;
+    const navMenu = document.querySelector('#navMenu') as HTMLElement;
 
-    if (navbar && navMenu && sentinel) {
+    if (navbar && navMenu && sentinel && navOptions) {
       window.addEventListener('scroll', () => {
         let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
         if (currentScroll > 500) {
           if (currentScroll > lastScrollTop) {
-            navbar.style.top = "-100px";
+            navbar.style.top = '-100px';
+            navMenu.classList.remove('open');
+            navOptions.classList.remove('open');
           } else {
-            navbar.style.top = "0";
+            navbar.style.top = '0';
           }
         }
 
@@ -171,9 +174,19 @@ const getLocalizedPath = () => {
 
   .nav--dark.nav--scrolled {
     background-color: #000;
-    animation-direction:;
     animation-fill-mode: both;
     transition: background-color 0.3s ease;
+    z-index: 500;
+  }
+
+  .nav--dark.nav--scrolled  .nav__options {
+    background-color: #000;
+    animation-fill-mode: both;
+    transition: background-color 0.1s ease 0.3s, transform .5s;
+  }
+
+  .nav--normal .nav__options {
+    background-color: #fff;
   }
 
   .nav__container {
@@ -233,7 +246,7 @@ const getLocalizedPath = () => {
   }
 
   .open {
-    --translate-menu: translateY(0);
+    --translate-menu: translateY(-1px);
     --translate-stick1: 0 0;
     --translate-stick3: 0 0;
     --rotate-stick1: 45deg;
@@ -307,6 +320,7 @@ const getLocalizedPath = () => {
     gap: 3rem;
     transform: var(--translate-menu);
     transition: transform .5s;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   }
 
   @media (width >= 768px) {
@@ -316,6 +330,7 @@ const getLocalizedPath = () => {
       margin-left: 3rem;
       flex-direction: row;
       justify-content: space-between;
+      box-shadow: unset;
     }
   }
 
