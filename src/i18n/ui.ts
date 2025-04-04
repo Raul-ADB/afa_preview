@@ -65,6 +65,11 @@ export const ui = {
     'puntacolorada.decription2': 'En Mesoamérica, los primeros habitantes, como los mexicas o aztecas, utilizaban espacios comunales como plazas y patios, fomentando la participación comunitaria y la conexión con el entorno. De manera similar, los romanos desarrollaron sofisticados acueductos y baños termales, elevando el ocio y la interacción pública a una expresión artística.',
     'puntacolorada.decription3': 'Este proyecto busca sintetizar estos principios ancestrales, adoptando conceptos como la plaza, el atrio y la disposición serena de los espacios, mientras emplea materiales locales como piedra, madera y chukum para crear una interpretación contemporánea de la sabiduría arquitectónica atemporal. Al honrar estas residencias ancestrales y su profundo impacto en la experiencia humana, esta vivienda encarna una narrativa de continuidad y respeto por el pasado, manifestada a través de una visión moderna que respeta el contexto único de Punta Colorada.',
 
+    'prototypes.alt': 'Imagen Galería AFA',
+    'prototypes.legend': 'ESTUDIOS DE FORMAS Y ESPACIO',
+    'prototypes.option1': 'Skecthes',
+    'prototypes.option2': 'Diagramas',
+    'prototypes.option3': 'Maquetas',
   },
   en: {
     '404.message': 'Sorry, the page you are looking for does not exist.',
@@ -124,5 +129,11 @@ export const ui = {
     'puntacolorada.decription1': 'This architectural project, situated within the Punta Colorada development in Baja California Sur, Mexico, is rooted in a profound philosophy that draws parallels between Mesoamerican and Roman architectural traditions. The design ethos takes inspiration from the classical periods of both civilizations, recognizing their shared emphasis on symmetry, proportion, and harmonious integration with nature.',
     'puntacolorada.decription2': 'In Mesoamerica, early residents such as the Mexica or Aztecs utilized communal spaces like plazas and courtyards, fostering community engagement and connection with the surrounding environment. Similarly, the Romans developed sophisticated aqueducts and thermal baths, elevating leisure and public interaction to an art form.',
     'puntacolorada.decription3': 'This project seeks to synthesize these ancient principles, embracing concepts of plaza, atrium, and serene spatial arrangements, while employing local materials such as stone, wood, and chukum to create a contemporary interpretation of timeless architectural wisdom. By honoring these ancestral residences and their profound impact on human experience, this residence embodies a narrative of continuity and reverence for the past, manifested through a modern lens that respects the unique context of Punta Colorada.',
+
+    'prototypes.alt': 'AFA Photo Gallery',
+    'prototypes.legend': 'STUDIES OF FORMS AND SPACE',
+    'prototypes.option1': 'Skecth',
+    'prototypes.option2': 'Diagrams',
+    'prototypes.option3': 'Models',
   },
 }

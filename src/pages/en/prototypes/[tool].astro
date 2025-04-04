@@ -4,14 +4,14 @@ import Layout from '@/layouts/Layout.astro';
 import HeroGallery from '@/components/HeroGallery.astro';
 import itemsSketch from '@/data/imagesSketch.json';
 import itemsDiagram from '@/data/imagesDiagram.json';
-import itemsMockup from '@/data/imagesMockup.json';
+import itemsModels from '@/data/imagesModels.json';
 import type { HeroOptionsInterface } from '@/types/types';
 
 export function getStaticPaths() {
   return [
     {params: {tool: 'sketch'}},
     {params: {tool: 'diagram'}},
-    {params: {tool: 'mockup'}},
+    {params: {tool: 'models'}},
   ];
 }
 
@@ -19,7 +19,7 @@ interface Options extends HeroOptionsInterface {};
 
 const { tool } = Astro.params;
 
-const items = tool === 'sketch' ? itemsSketch : (tool === 'diagram') ? itemsDiagram : itemsMockup;
+const items = tool === 'sketch' ? itemsSketch : (tool === 'diagram') ? itemsDiagram : itemsModels;
 const hero = tool === 'sketch' ? 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112056/portadaAT_u14b2d.jpg' : (tool === 'diagram') ? 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743196796/AD00_j9juuv.jpg' : 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743196952/AM00_fnskp5.jpg';
 const heroAlt = tool === 'sketch' ? 'Imagen Galería Mobile' : 'Imagen Galería Film';
 const legend= 'ESTUDIOS DE FORMAS Y ESPACIO';
@@ -34,7 +34,7 @@ const options:Options[] =  [
   },
   {
     name: 'Maquetas',
-    url: '/prototypes/mockup'
+    url: '/prototypes/models'
   },
 ];
 ---
