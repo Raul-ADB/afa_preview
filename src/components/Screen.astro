@@ -13,7 +13,7 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
 
 <div class="screen" data-image={image}>
   <a class="screen__title" href={getRelativeLocaleUrl(currentLang, cta)}>
-    <h2>{ project_title === "Fotografía AFA" ? translateUI("afa.work") : project_title }</h2>
+    <h2>{translateUI(project_title)}</h2>
   </a>
 </div>
 

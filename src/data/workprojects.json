@@ -1,43 +1,43 @@
 [
   {
     "project_id": "P00_AP",
-    "project_title": "AFA PHOTOGRAPHY",
+    "project_title": "afa.work1",
     "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112055/portadaAP_cfzkxx.jpg",
     "project_link": "/photography/"
   },
   {
     "project_id": "P01_PC",
-    "project_title": "PUNTA COLORADA",
+    "project_title": "afa.work2",
     "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112054/portadaPC_ul7t6i.jpg",
     "project_link": "work/punta_colorada/"
   },
   {
     "project_id": "P02_CC",
-    "project_title": "CASA COMPORTA",
+    "project_title": "afa.work3",
     "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112062/portadaCC_ktjsfj.jpg",
     "project_link": "work/casa_comporta/"
   },
   {
     "project_id": "P03_GM",
-    "project_title": "GHOST MARFA",
+    "project_title": "afa.work4",
     "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112051/portadaGM_epzn2a.png",
     "project_link": "work/ghost_marfa/"
   },
   {
     "project_id": "P04_MT",
-    "project_title": "MERCADO TACUBAYA",
+    "project_title": "afa.work5",
     "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112053/portadaMT_yrbslv.png",
     "project_link": "work/mercado_tacubaya/"
   },
   {
     "project_id": "P00_SDM",
-    "project_title": "SKECHES, DIAGRAMAS Y MAQUETAS",
+    "project_title": "afa.work6",
     "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112056/portadaAT_u14b2d.jpg",
     "project_link": "/prototypes/"
   },
   {
     "project_id": "P05_TPD",
-    "project_title": "The Palm Dubai - Hospitality Development (Under Development)",
+    "project_title": "afa.work7",
     "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112187/AFA_kqraay.png",
     "project_link": "404"
   }

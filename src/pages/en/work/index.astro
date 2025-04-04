@@ -23,7 +23,7 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
                 <img src={p.project_image} class="portfolio__img gray-scale" alt={p.project_title} loading="lazy" >
               </figure>
               <p class={`portfolio__title ${p.project_id}`}>
-                <a href={getRelativeLocaleUrl(currentLang, p.project_link)} class="portfolio__link">{p.project_title === 'Fotografía AFA' ? translateUI("afa.work") : p.project_title }</a>
+                <a href={getRelativeLocaleUrl(currentLang, p.project_link)} class="portfolio__link">{translateUI(p.project_title)}</a>
               </p>
             </div>
           ))
@@ -123,7 +123,7 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
   .portfolio__link:hover {
     cursor: pointer;
     color: #000;
-    font-weight: bold;
+    font-weight: 400;
   }
 
   .portfolio__image {

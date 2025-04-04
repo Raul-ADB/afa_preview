@@ -10,7 +10,13 @@ export const ui = {
     '404.message': 'Lo sentimos, la página que buscas no existe.',
     '404.button': 'Volver al inicio',
 
-    'afa.work': 'Fotografía AFA',
+    'afa.work1': 'FOTOGRAFÍA AFA',
+    'afa.work2': 'PUNTA COLORADA',
+    'afa.work3': 'TRM CASA COMPORTA',
+    'afa.work4': 'GHOST MARFA',
+    'afa.work5': 'MERCADO TACUBAYA',
+    'afa.work6': 'SKECHES, DIAGRAMAS Y MAQUETAS',
+    'afa.work7': 'The Palm Dubai - Hospitality Development (en desarrollo)',
 
     'nav.home': 'Inicio',
     'nav.about': 'Info',
@@ -64,7 +70,13 @@ export const ui = {
     '404.message': 'Sorry, the page you are looking for does not exist.',
     '404.button': 'Go back to home',
 
-    'afa.work': 'AFA Photography',
+    'afa.work1': 'AFA PHOTOGRAPHY',
+    'afa.work2': 'PUNTA COLORADA',
+    'afa.work3': 'TRM CASA COMPORTA',
+    'afa.work4': 'GHOST MARFA',
+    'afa.work5': 'MERCADO TACUBAYA',
+    'afa.work6': 'SKETCHES, DIAGRAMS AND MODELS',
+    'afa.work7': 'The Palm Dubai - Hospitality Development (Under Development)',
 
     'nav.home': 'Home',
     'nav.about': 'About',
