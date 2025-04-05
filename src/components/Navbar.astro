@@ -74,51 +74,18 @@ const getLocalizedPath = () => {
 
 <script>
 
+  import { handleScroll, observeSentinel, toggleMenu } from '@/utils/utils';
+
   document.addEventListener('astro:page-load', () => {
-    let lastScrollTop = 0;
     const sentinel = document.querySelector('#sentinel') as HTMLElement;
     const navbar = document.querySelector('#navbar') as HTMLElement;
-    const navOptions = document.querySelector('#navOptions') as HTMLElement;
     const navMenu = document.querySelector('#navMenu') as HTMLElement;
+    const menu = document.querySelector('#navOptions') as HTMLElement;
 
-    if (navbar && navMenu && sentinel && navOptions) {
-      window.addEventListener('scroll', () => {
-        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (currentScroll > 500) {
-          if (currentScroll > lastScrollTop) {
-            navbar.style.top = '-100px';
-            navMenu.classList.remove('open');
-            navOptions.classList.remove('open');
-          } else {
-            navbar.style.top = '0';
-          }
-        }
-
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-      });
-
-      navMenu.addEventListener('click', () => {
-        let menu = document.querySelector('#navOptions');
-        if (menu) {    
-          menu.classList.toggle('open');
-          navMenu.classList.toggle('open');
-        }
-      });
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          console.log('Is intersecting:', entry.isIntersecting);
-          if (!entry.isIntersecting) {
-            navbar.classList.add('nav--scrolled');
-          } else {
-            navbar.classList.remove('nav--scrolled');
-          }
-        },
-        { rootMargin: '250px 0px 0px 0px' }
-      );
-
-      observer.observe(sentinel);
+    if (sentinel && navbar && navMenu && menu) {
+      handleScroll(navbar, navMenu, menu);
+      toggleMenu(navMenu, menu);
+      observeSentinel(sentinel, navbar);
     }
   });
 
@@ -173,16 +140,22 @@ const getLocalizedPath = () => {
   }
 
   .nav--dark.nav--scrolled {
-    background-color: #000;
+    background-color: rgba(0 0 0 / 0.8);
     animation-fill-mode: both;
     transition: background-color 0.3s ease;
     z-index: 500;
   }
 
   .nav--dark.nav--scrolled  .nav__options {
-    background-color: #000;
+    background-color: rgba(0 0 0 / 0.8);
     animation-fill-mode: both;
     transition: background-color 0.3s ease 0.3s, transform .5s;
+  }
+
+  @media (width >= 768px) {
+    .nav--dark.nav--scrolled  .nav__options {
+      background-color: transparent;
+    }
   }
 
   .nav--normal .nav__options {

@@ -30,9 +30,42 @@ const shortenPath = (url: string): string => {
   return url;
 }
 
+const handleScroll = (navbar: HTMLElement, navMenu: HTMLElement, menu: HTMLElement) : void => {
+  let lastScrollTop = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > 500) {
+      navbar.style.top = currentScroll > lastScrollTop ? "-100px" : "0";
+      navMenu.classList.remove('open');
+      menu.classList.remove('open');
+    }
+    lastScrollTop = Math.max(0, currentScroll);
+  });
+}
+
+const toggleMenu = (navMenu: HTMLElement, menu: HTMLElement) : void => {
+  navMenu.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    navMenu.classList.toggle('open');
+  });
+}
+
+const observeSentinel = (sentinel: HTMLElement, navbar: HTMLElement) : void => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      navbar.classList.toggle('nav--scrolled', !entry.isIntersecting);
+    },
+    { rootMargin: '300px 0px 0px 0px' }
+  );
+  observer.observe(sentinel);
+}
+
 export {
   useTranslation,
   getRandomNumber,
   changeBackgroundImage,
-  shortenPath
+  shortenPath,
+  handleScroll,
+  toggleMenu,
+  observeSentinel
 };
