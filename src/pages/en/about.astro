@@ -13,16 +13,12 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
 const { images, 
   professionalTimeline: { timelineTitle: pTitle, timelineElements: pElements}, 
   academyTimeline: { timelineTitle: aTitle , timelineElements: aElements }} = data;
-
-let profileImage = images[getRandomNumber(images.length - 1)].src;
 ---
 
 <Layout pageTitle="About">
   <main class="main container">
     <section class="about__image mb">
-      <figure class="about__picture">
-        <img src={profileImage} class="about__img" alt="Imagen Alonso Fernández" loading="lazy" >
-      </figure>
+      <div id="aboutPicture" class="about__picture"></div>
     </section>
     <section class="about__text">
       <section class="bio mb">
@@ -69,6 +65,22 @@ let profileImage = images[getRandomNumber(images.length - 1)].src;
 
   <script></script>
 </Layout>
+
+<script>
+
+  import data from "@/data/about.json";
+  import { getRandomNumber, setBackgroundImage } from '@/utils/utils';
+
+  document.addEventListener('astro:page-load', () => {
+    const picture = document.querySelector('#aboutPicture') as HTMLElement;
+    const { images } = data;
+    const backgroundImage = images[getRandomNumber(images.length - 1)].src;
+    if (picture) {
+      setBackgroundImage(picture, backgroundImage);
+    }
+  });
+
+</script>
 
 <style>
   .mb {
@@ -120,19 +132,15 @@ let profileImage = images[getRandomNumber(images.length - 1)].src;
   .about__picture {
     width: 100%;
     height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   @media (width >= 768px) {
     .about__picture {
       width: 55rem;
     }
-  }
-
-  .about__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
   }
 
   .about__text {
