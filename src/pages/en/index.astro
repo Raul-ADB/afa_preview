@@ -1,12 +1,8 @@
 ---
 import { ClientRouter } from 'astro:transitions';
-import data from '@/data/landing.json';
-import { getRandomNumber } from '@/utils/utils';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
-const { pics } = data;
 const currentLang = Astro.currentLocale || 'es';
-let backgroundImage = pics[getRandomNumber(pics.length - 1)].url;
 ---
 
 <!DOCTYPE html>
@@ -20,10 +16,7 @@ let backgroundImage = pics[getRandomNumber(pics.length - 1)].url;
 <body>
 
   <a href={getRelativeLocaleUrl(currentLang, 'home')}>
-    <main class="main">
-      <figure class="main__background">
-        <img src={backgroundImage} class="main__img" alt="Imagen AFA" loading="lazy" >
-      </figure>
+    <main id="main" class="main">
       <figure class="main__picture">
         <img src="https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112187/AFA_kqraay.png" class="main__img" alt="Logo AFA" loading="lazy" >
       </figure>
@@ -32,6 +25,22 @@ let backgroundImage = pics[getRandomNumber(pics.length - 1)].url;
 
 </body>
 </html>
+
+<script>
+
+  import data from '@/data/landing.json';
+  import { getRandomNumber, setBackgroundImage } from '@/utils/utils';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const main = document.querySelector('#main') as HTMLElement;
+    const { pics } = data;
+    const backgroundImage = pics[getRandomNumber(pics.length - 1)].url;
+    if (main) {
+      setBackgroundImage(main, backgroundImage);
+    }
+  });
+
+</script>
 
 <style>
 

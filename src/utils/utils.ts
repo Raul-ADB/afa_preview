@@ -60,6 +60,12 @@ const observeSentinel = (sentinel: HTMLElement, navbar: HTMLElement) : void => {
   observer.observe(sentinel);
 }
 
+const setBackgroundImage = (element: HTMLElement, url: string): void => {
+  if (element && url) {
+    element.style.backgroundImage = `url(${url})`;
+  }
+}
+
 export {
   useTranslation,
   getRandomNumber,
@@ -67,5 +73,6 @@ export {
   shortenPath,
   handleScroll,
   toggleMenu,
-  observeSentinel
+  observeSentinel,
+  setBackgroundImage
 };
