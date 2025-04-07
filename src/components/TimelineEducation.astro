@@ -1,0 +1,125 @@
+---
+import Timeline from "./Timeline.astro"
+---
+
+<Timeline timelineTitle="EDUCACIÓN">
+  <div class="timeline__element">
+    <div class="element__year">2021</div>
+    <div class="element__text">
+      <div class="element__title">
+        <p class="title--1">BArch, Architecture and Urbanism Iberoamerican University, Mexico City</p>
+        <p class="title--2">PGD, Creative Potential ACTO Arquitectura, Mexico City</p>
+      </div>
+    </div>
+  </div>
+  <div class="timeline__element">
+    <div class="element__year">2020</div>
+    <div class="element__text">
+      <p class="element__title element__description--c"> </p>
+      <p class="element__description">BArch, Architecture and Urbanism - exchange programme. Universidad Politécnica de Cataluña, ETSAB, Barcelona</p>
+    </div>
+  </div>
+  <div class="timeline__element">
+    <div class="element__year">2019</div>
+    <div class="element__text">
+      <p class="element__title element__description--c"> </p>
+      <p class="element__description"> </p>
+    </div>
+  </div>
+  <div class="timeline__element">
+    <div class="element__year">2016</div>
+    <div class="element__text">
+      <p class="element__title element__title--c">BArch, Architecture and Urbanism Iberoamerican University, Mexico City</p>
+    </div>
+  </div>
+</Timeline>
+
+<style>
+
+  .timeline__element {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (width >= 992px) {
+    .timeline__element {
+      flex-direction: row;
+      gap: 4rem;
+    }
+  }
+
+  .element__year {
+    width: 10%;
+    font-size: 2.4rem;
+    font-weight: 400;
+  }
+
+  .element__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .element__title {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .element__title--c {
+    max-width: 35rem;
+  }
+
+  .element__description {
+    max-width: 40rem;
+  }
+
+  @media (width >= 1024px) {
+    .element__title {
+      flex-direction: row;
+    }
+
+    .title--1 {
+      width: 55%;
+    }
+  
+    .title--2 {
+      width: 45%;
+      margin-bottom: 5rem;
+    }
+
+    .element__description--c {
+      margin-bottom: 4rem;
+    }
+
+    .element__text {
+      width: 85%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: relative;
+    }
+
+    .element__year {
+      position: relative;
+    }
+  
+    .element__year::before {
+      content: ' ';
+      display: block;
+      width: 0.1rem;
+      background-color: #000;
+      position: absolute;
+      height: 75%;
+      top: 5rem;
+      left: 2.8rem;
+    }
+
+    .timeline__element:last-child .element__year::before {
+      display: none;
+    }
+  }
+
+</style>

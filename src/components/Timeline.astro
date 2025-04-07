@@ -6,7 +6,9 @@ const {timelineTitle} = Astro.props;
 
 <section class="timeline mb">
   <h4 class="timeline__title">{timelineTitle}</h4>
-  <slot/>
+  <div class="timeline__body">
+    <slot/>
+  </div>
 </section>
 
 <style>
@@ -14,5 +16,11 @@ const {timelineTitle} = Astro.props;
     display: flex;
     flex-direction: column;
     gap: 4rem;
+  }
+
+  .timeline__body {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
   }
 </style>

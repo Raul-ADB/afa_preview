@@ -5,10 +5,10 @@ import { useTranslation } from '@/utils/utils';
 
 const currentLang = Astro.currentLocale || 'es';
 const translateUI = useTranslation(currentLang as keyof typeof languageList);
-const { year, title, tags, description } = Astro.props;
+const { id, year, title, tags, description } = Astro.props;
 ---
 
-<div class="timeline__element">
+<div class={`timeline__element timeline__element--${id}`}>
   <div class="element__year">{year}</div>
   <div class="element__text">
     <p class="element__title">{title}</p>
@@ -25,7 +25,7 @@ const { year, title, tags, description } = Astro.props;
     gap: 2rem;
   }
 
-  @media (width >= 992px) {
+  @media (width >= 1024px) {
     .timeline__element {
       flex-direction: row;
       gap: 4rem;
@@ -44,7 +44,7 @@ const { year, title, tags, description } = Astro.props;
     gap: 2rem;
   }
 
-  @media (width >= 768px) {
+  @media (width >= 1024px) {
     .element__text {
       width: 85%;
       display: flex;

@@ -16,6 +16,7 @@
       }
     ],
     "professionalTimeline": {
+      "timelineId":"TLEP",
       "timelineTitle": "EXPERIENCIA PROFESIONAL",
       "timelineElements": [
         {
@@ -45,13 +46,14 @@
       ]
     },
     "academyTimeline": {
+      "timelineId":"TLED",
       "timelineTitle": "EDUCACIÓN",
       "timelineElements": [
         {
           "title": "PGD, Creative Potential ACTO Arquitectura, Mexico City",
           "year": "2021",
           "tags": [],
-          "description": "BArch, Architecture and Urbanism Iberoamerican University, Mexico City"
+          "description": ""
         },
         {
           "title": "",
