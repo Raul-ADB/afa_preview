@@ -4,7 +4,7 @@ import TimelineItem from './TimelineItem.astro';
 const {timelineTitle} = Astro.props; 
 ---
 
-<section class="timeline mb">
+<section class="timeline">
   <h4 class="timeline__title">{timelineTitle}</h4>
   <div class="timeline__body">
     <slot/>
@@ -12,10 +12,15 @@ const {timelineTitle} = Astro.props;
 </section>
 
 <style>
+
   .timeline{
     display: flex;
     flex-direction: column;
     gap: 4rem;
+  }
+
+  .timeline__title {
+    font-weight: 500;
   }
 
   .timeline__body {
@@ -23,4 +28,5 @@ const {timelineTitle} = Astro.props;
     flex-direction: column;
     gap: 5rem;
   }
+
 </style>

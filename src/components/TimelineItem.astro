@@ -35,13 +35,18 @@ const { id, year, title, tags, description } = Astro.props;
   .element__year {
     width: 10%;
     font-size: 2.4rem;
-    font-weight: 400;
+    font-weight: 700;
   }
 
   .element__text {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .element__tags {
+    font-style: italic;
+    font-weight: 200;
   }
 
   @media (width >= 1024px) {
@@ -51,11 +56,6 @@ const { id, year, title, tags, description } = Astro.props;
       flex-direction: column;
       gap: 2rem;
       position: relative;
-    }
-
-    .element__tags {
-      font-style: italic;
-      font-weight: 200;
     }
 
     .element__year {
