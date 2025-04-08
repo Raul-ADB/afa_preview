@@ -3,7 +3,7 @@
     "project_id": "P00_AP",
     "project_title": "afa.work1",
     "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112055/portadaAP_cfzkxx.jpg",
-    "project_link": "/photography/"
+    "project_link": "photography/mobile/"
   },
   {
     "project_id": "P01_PC",
@@ -33,7 +33,7 @@
     "project_id": "P00_SDM",
     "project_title": "afa.work6",
     "project_image": "https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112056/portadaAT_u14b2d.jpg",
-    "project_link": "/prototypes/"
+    "project_link": "prototypes/sketch/"
   },
   {
     "project_id": "P05_TPD",

@@ -31,7 +31,7 @@ interface Props {
     <div class="control__options">
       {
         options.map((option: Options) => (
-        <p class={`${origin.charAt(0) === option.name.charAt(0).toLowerCase() ? 'bold' : ''}`}><a href={getRelativeLocaleUrl(currentLang, option.url)}>{option.name}</a></p>
+        <p class={`option ${origin.charAt(0) === option.name.charAt(0).toLowerCase() ? 'bold' : ''}`}><a href={getRelativeLocaleUrl(currentLang, option.url)}>{option.name}</a></p>
         ))
       }
     </div>
@@ -79,6 +79,14 @@ interface Props {
   .control__options {
     display: flex;
     gap: 2.4rem;
+    color: #000;
+  }
+
+  .option {
+    color: #000;
+  }
+
+  .option:visited {
     color: #000;
   }
 
