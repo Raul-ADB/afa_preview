@@ -8,6 +8,11 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
 ---
 
 <Layout pageTitle="Contact">
+  <div class="notification hidde">
+    <div class="notification__content">
+      <p class="notification__text">Mensaje enviado con éxito</p>
+    </div>
+  </div>
   <main class="main__contact container">
     <section class="contact__AFA">
       <div class="contact__group">
@@ -15,21 +20,21 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
           <img src="https://res.cloudinary.com/dhojdq7qf/image/upload/v1743723458/logo_negro_usaqvw.png" class="contact__img" alt="AFA Logo" loading="lazy" >
         </figure>
         <p>Architecture and Design Development</p>
-        <p class="bold"><a href="https://www.instagram.com/alonsofdza">@alonsofdza</a></p>
+        <p class="contact__link bold"><a href="https://www.instagram.com/alonsofdza">@alonsofdza</a></p>
       </div>
       <div class="contact__group">
         <figure class="contact__picture">
           <img src="https://res.cloudinary.com/dhojdq7qf/image/upload/v1743723459/LOGO_METROPOL_negro_1_j8ofem.png" class="contact__img" alt="Metropol Logo" loading="lazy" >
         </figure>
         <p>Object Design for the Metropolis</p>
-        <p class="bold"><a href="https://www.instagram.com/alonsofdza">@studio.metropol</a></p>
+        <p class="contact__link bold"><a href="https://www.instagram.com/alonsofdza">@studio.metropol</a></p>
       </div>
       <div class="contact__group">
         <figure class="contact__picture">
           <img src="https://res.cloudinary.com/dhojdq7qf/image/upload/v1743723459/AFA_COLECTIVO_LOGO_NEGRO_zduelc.png" class="contact__img" alt="Colectivo Logo" loading="lazy" >
         </figure>
         <p>Artistic Direction</p>
-        <p class="bold"><a href="https://www.instagram.com/alonsofdza">@alonsofdza</a></p>
+        <p class="contact__link bold"><a href="https://www.instagram.com/alonsofdza">@alonsofdza</a></p>
       </div>
     </section>
     <section class="contact__form">
@@ -62,6 +67,46 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
     </section>
   </main>
 </Layout>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">emailjs.init('GaB6H1T3gT8X2h_pF')</script>
+
+<script>
+  import emailjs from '@emailjs/browser';
+
+  document.addEventListener('astro:page-load', function() {
+    const form = document.getElementById('contactForm') as HTMLFormElement;
+    const buttonText = document.querySelector('.submit__text') as HTMLSpanElement;
+    const buttonLoader = document.querySelector('.submit__loader') as HTMLSpanElement;
+    const notification = document.querySelector('.notification') as HTMLDivElement;
+
+    if(form) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+    
+        const serviceID = 'default_service';
+        const templateID = 'template_w2c97bm';
+        
+        try {
+          buttonText.classList.toggle("hidde");
+          buttonLoader.classList.toggle("show");
+          await emailjs.sendForm(serviceID, templateID, this);
+          notification.classList.add('show');
+        } catch (err) {
+          alert(JSON.stringify(err));
+        } finally {
+          setTimeout(() => {
+            notification.classList.remove('show');
+          }, 2000);
+          buttonText.classList.toggle("hidde");
+          buttonLoader.classList.toggle("show");
+          this.reset();
+        }
+      });
+    }
+  });
+
+</script>
 
 <style>
 
@@ -110,6 +155,14 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
     justify-content: center;
     align-items: center;
     gap: 1rem;
+  }
+
+  .contact__link {
+    color: #000;
+  }
+
+  .contact__link:visited {
+    color: #000;
   }
 
   .contact__picture {
