@@ -1,13 +1,7 @@
 ---
-import type { CardInterface, ScreenInterface, ComponentInterface } from '@/types/types';
-import { getRandomNumber } from '@/utils/utils';
+
 import Layout from '@/layouts/Layout.astro';
-import ScreenGallery from '@/components/ScreenGallery.astro';
-import Screen from '@/components/Screen.astro';
-import CardGallery from '@/components/CardGallery.astro';
-import Card from '@/components/Card.astro';
-import fullscreens from '@/data/fullscreens.json';
-import cards from '@/data/cards.json';
+import Randomize from '@/components/Randomize.astro';
 import { languageList } from "@/i18n/ui";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslation } from '@/utils/utils';
@@ -15,117 +9,10 @@ import { useTranslation } from '@/utils/utils';
 const currentLang = Astro.currentLocale || 'es';
 const translateUI = useTranslation(currentLang as keyof typeof languageList);
 
-interface Screen extends ScreenInterface {};
-interface Card extends CardInterface {};
-interface Component extends ComponentInterface {};
-
-const copyScreens = JSON.parse(JSON.stringify(fullscreens));
-const copyCards = JSON.parse(JSON.stringify(cards));
-
-let sList = fullscreens;
-let cList = cards;
-
-let arrayScreenGallery: Screen[][] = [];
-let arrayCardGallery: { key: string, cards: Card[] }[] = [];
-let randNumLayout = getRandomNumber(4) + 5;
-
-const makeScreenGallery = () => {
-  let screenList: Screen[] = [];
-  for (let i = 0; i < getRandomNumber(3); i++) {
-    const random = getRandomNumber(sList.length - 1);
-    const randomScreen = sList[random];
-    screenList.push({
-      project_title: randomScreen.project_title,
-      name: randomScreen.name,
-      image: randomScreen.url,
-      cta: randomScreen.cta
-    });
-    /* sList.splice(random, 1)[0]; */
-  }
-  arrayScreenGallery.push(screenList);
-};
-
-const typeGallery: Record<string, number> = {
-  A: 7, B: 7, C: 10, D: 5, E: 4, F: 8
-};
-
-let availableKeys: string[] = [...Object.keys(typeGallery)];
-
-function getRandomKey(): string {
-  if (availableKeys.length === 0) {
-    availableKeys = [...Object.keys(typeGallery)];
-  }
-  const randomIndex = Math.floor(Math.random() * availableKeys.length);
-  return availableKeys.splice(randomIndex, 1)[0];
-}
-
-const makeCardGallery = () => {
-  let cardList: Card[] = [];
-  const randomKey = getRandomKey();
-  const numCards = typeGallery[randomKey];
-  for (let i = 0; i < numCards; i++) {
-    const random = getRandomNumber(cList.length - 1);
-    const randomCard = cList[random];
-    cardList.push({
-      project_title: randomCard?.project_title,
-      name: randomCard?.name,
-      description: randomCard?.description,
-      cta: randomCard?.cta,
-      url: randomCard?.url,
-      type: randomCard?.type,
-      cardNumber: i + 1 
-    });
-    cList.splice(random, 1)[0];
-  }
-  arrayCardGallery.push({ key: randomKey, cards: cardList });
-};
-
-let components: Component[] = [];
-
-for (let index = 0; index < 20; index++) {
-  if (index % 2 === 0) {
-    makeScreenGallery();
-    components.push({
-      type: 'ScreenGallery',
-      elements: arrayScreenGallery[arrayScreenGallery.length - 1]
-    });
-  } else {
-    makeCardGallery();
-    components.push({
-      type: 'CardGallery',
-      elements: arrayCardGallery[arrayScreenGallery.length - 1]
-    });
-  }
-  sList = JSON.parse(JSON.stringify(copyScreens));
-  cList = JSON.parse(JSON.stringify(copyCards));
-}
-
 ---
 
 <Layout pageTitle='Home'>
-
-  {components.map((component, index) => {
-    if (component.type === 'ScreenGallery') {
-      return (
-        <ScreenGallery key={index}>
-          {component.elements.map((screen: Screen) => (
-            <Screen {...screen} />
-          ))}
-        </ScreenGallery>
-      );
-    } else {
-      /* return <CardGalleryF key={index} >
-        {component.elements.map((card) => (
-            <Card {...card} />
-          ))}
-      </CardGalleryF>; */
-      const { key, cards } = component.elements as { key: string, cards: Card[] };
-      return (
-        <CardGallery type={key} cards={cards} />
-      );
-    }
-  })}
-
+  <Randomize/>
   <section class="home__cta">
     <a href={getRelativeLocaleUrl(currentLang, "/home")}>Ver más</a>
   </section>
