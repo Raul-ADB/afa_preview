@@ -1,3 +1,4 @@
+import { ref } from 'vue';
 import type { CardInterface, ScreenInterface, ComponentInterface } from '@/types/types';
 import { getRandomNumber } from '@/utils/utils';
 import fullscreens from '@/data/fullscreens.json';
@@ -7,7 +8,9 @@ export interface Screen extends ScreenInterface {}
 export interface Card extends CardInterface {}
 export interface Component extends ComponentInterface {}
 
-export function generateComponents(currentLang: string): Component[] {
+const components = ref<Component[]>([]);
+
+export function generateComponents(currentLang: string): void {
   const copyScreens = JSON.parse(JSON.stringify(fullscreens));
   const copyCards = JSON.parse(JSON.stringify(cards));
 
@@ -71,18 +74,18 @@ export function generateComponents(currentLang: string): Component[] {
     arrayCardGallery.push({ key: randomKey, cards: cardList });
   };
 
-  let components: Component[] = [];
+  components.value = [];
 
   for (let index = 0; index < 20; index++) {
     if (index % 2 === 0) {
       makeScreenGallery();
-      components.push({
+      components.value.push({
         type: 'ScreenGallery',
         elements: arrayScreenGallery[arrayScreenGallery.length - 1],
       });
     } else {
       makeCardGallery();
-      components.push({
+      components.value.push({
         type: 'CardGallery',
         elements: arrayCardGallery[arrayScreenGallery.length - 1],
       });
@@ -90,5 +93,6 @@ export function generateComponents(currentLang: string): Component[] {
     sList = JSON.parse(JSON.stringify(copyScreens));
     cList = JSON.parse(JSON.stringify(copyCards));
   }
-  return components;
 }
+
+export { components };

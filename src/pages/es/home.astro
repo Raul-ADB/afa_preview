@@ -5,6 +5,8 @@ import Randomize from '@/components/Randomize.astro';
 import { languageList } from "@/i18n/ui";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslation } from '@/utils/utils';
+import ScreenGallery from '@/components/ScreenGallery.vue';
+import RandomHome from '@/layouts/RandomHome.vue';
 
 const currentLang = Astro.currentLocale || 'es';
 const translateUI = useTranslation(currentLang as keyof typeof languageList);
@@ -12,7 +14,7 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
 ---
 
 <Layout pageTitle='Home'>
-  <Randomize/>
+  <RandomHome client:load/>
   <section class="home__cta">
     <a href={getRelativeLocaleUrl(currentLang, "/home")}>Ver más</a>
   </section>

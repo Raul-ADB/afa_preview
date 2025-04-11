@@ -9,9 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/vue": "^5.0.9",
     "@emailjs/browser": "^4.4.1",
     "@fontsource-variable/montserrat": "^5.1.1",
     "astro": "^5.3.0",
-    "photoswipe": "^5.4.4"
+    "photoswipe": "^5.4.4",
+    "vue": "^3.5.13"
   }
 }
