@@ -10,6 +10,8 @@ export const ui = {
     '404.message': 'Lo sentimos, la página que buscas no existe.',
     '404.button': 'Volver al inicio',
 
+    'home.button': 'Ver más',
+
     'afa.work1': 'FOTOGRAFÍA AFA',
     'afa.work2': 'PUNTA COLORADA',
     'afa.work3': 'TRM CASA COMPORTA',
@@ -74,6 +76,8 @@ export const ui = {
   en: {
     '404.message': 'Sorry, the page you are looking for does not exist.',
     '404.button': 'Go back to home',
+
+    'home.button': 'View more',
 
     'afa.work1': 'AFA PHOTOGRAPHY',
     'afa.work2': 'PUNTA COLORADA',

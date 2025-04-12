@@ -1,11 +1,15 @@
 <script setup>
 
+  import '@/styles/fonts.css';
+  import { getUrl } from '@/utils/utils';
   const props = defineProps({
     card: {
       type: Object,
       required: true
     }
   });
+
+  const url = getUrl();
 
 </script>
 
@@ -16,7 +20,7 @@
       <img :src="card.url" class="card__image" :alt="`Imagen ${card.name}`" loading="lazy" >
     </figure>
     <div class="card__body">
-      <a class="card__link" href="">
+      <a class="card__link" :href="`${url}${card.cta}`" target="_blank" rel="noopener noreferrer">
         <h3 class="card__title">{{card.project_title}}</h3>
       </a>
       <p class="card__description">{{card.description}}</p>
@@ -78,6 +82,7 @@
   .card__title {
     color: #000;
     font-size: 1.8rem;
+    font-family: 'Gotham', sans-serif;
     font-weight: 500;
   }
 

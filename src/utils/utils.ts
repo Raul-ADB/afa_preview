@@ -41,6 +41,13 @@ const getBaseUrl = (url: string): string => {
   return url;
 };
 
+const getUrl = (): string => {
+  const currentLang = document.documentElement.lang || 'es';
+  const currentUrl = window.location.href;
+  const baseUrl = getBaseUrl(currentUrl);
+  return `${baseUrl}${currentLang}/`;
+};
+
 const handleScroll = (navbar: HTMLElement, navMenu: HTMLElement, menu: HTMLElement) : void => {
   let lastScrollTop = 0;
   window.addEventListener('scroll', () => {
@@ -83,6 +90,7 @@ export {
   changeBackgroundImage,
   shortenPath,
   getBaseUrl,
+  getUrl,
   handleScroll,
   toggleMenu,
   observeSentinel,

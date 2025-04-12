@@ -1,7 +1,8 @@
 <script setup>
 
-  import { getBaseUrl } from '@/utils/utils';
+  import '@/styles/fonts.css';
   import { onMounted } from 'vue';
+  import { getUrl } from '@/utils/utils';
 
   const props = defineProps({
     screen: {
@@ -10,9 +11,7 @@
     }
   });
 
-  const currentLang = document.documentElement.lang || 'es';
-  const currentUrl = window.location.href;
-  const baseUrl = getBaseUrl(currentUrl);
+  const url = getUrl();
 
   onMounted(() => {
     const screens = document.querySelectorAll('.screen');
@@ -29,7 +28,7 @@
 
 <template>
   <div class="screen" :data-image="screen.image">
-    <a class="screen__title" :href="`${baseUrl}${currentLang}/${screen.cta}`">
+    <a class="screen__title" :href="`${url}${screen.cta}`">
       <h4>{{screen.project_title}}</h4>
     </a>
   </div>
@@ -56,20 +55,9 @@
     top: 70%;
     max-width: 144rem;
     margin: 0 auto;
-    color: #000;
-    text-transform: uppercase;
-    text-decoration: underline;
-  }
-
-  .screen__title {
-    display: block;
-    position: sticky;
-    width: 92%;
-    padding-bottom: 100px;
-    top: 70%;
-    max-width: 144rem;
-    margin: 0 auto;
     color: #FFF;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 500;
     font-size: 1.8rem;
     text-transform: uppercase;
     text-decoration: underline;

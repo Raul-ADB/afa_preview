@@ -92,7 +92,6 @@
       sList = JSON.parse(JSON.stringify(copyScreens));
       cList = JSON.parse(JSON.stringify(copyCards));
     }
-    console.log(components.value);
   });
 
 </script>
