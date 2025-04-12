@@ -22,7 +22,6 @@
       v-for="(card, index) in cards"
       :key="index"
       :card="card"
-      :index="index"
     />
   </section>
 

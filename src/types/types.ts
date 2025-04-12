@@ -38,7 +38,7 @@ export interface ImageInterface {
 
 export interface ComponentInterface {
   type: string;
-  elements: ScreenInterface[] | CardInterface[] | { key: string; cards: CardInterface[] };
+  elements: ScreenInterface[] | { key: string; cards: CardInterface[] };
 }
 
 export interface HeroProjectInterface {

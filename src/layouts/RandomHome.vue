@@ -14,7 +14,7 @@
 
   let sList = fullscreens;
   let cList = cards;
-  let arrayScreenGallery = [];
+  let arrayScreenGallery: Screen[][] = [];
   let arrayCardGallery: { key: string; cards: Card[] }[] = [];
   const typeGallery: Record<string, number> = {
     A: 7,
@@ -28,6 +28,7 @@
 
   let listS = ref<Screen[]>([]);
   let listC = ref<{ key: string; cards: Card[] }>({ key: '', cards: [] });
+  const components = ref<Component[]>([]);
 
   const makeScreenGallery = () => {
     let screenList: Screen[] = [];
@@ -76,15 +77,39 @@
   };
 
   onMounted(() => {
-    listS.value = makeScreenGallery();
-    listC.value = makeCardGallery();
+    /* listS.value = makeScreenGallery();
+    listC.value = makeCardGallery(); */
+    const copyScreens = JSON.parse(JSON.stringify(fullscreens));
+    const copyCards = JSON.parse(JSON.stringify(cards));
+    for (let index = 0; index < 20; index++) {
+      if (index % 2 === 0) {
+        makeScreenGallery();
+        components.value.push({
+          type: 'ScreenGallery',
+          elements: arrayScreenGallery[arrayScreenGallery.length - 1],
+        });
+      } else {
+        makeCardGallery();
+        components.value.push({
+          type: 'CardGallery',
+          elements: arrayCardGallery[arrayScreenGallery.length - 1],
+        });
+      }
+      sList = JSON.parse(JSON.stringify(copyScreens));
+      cList = JSON.parse(JSON.stringify(copyCards));
+    }
+    console.log(components.value);
   });
 
 </script>
 
 <template>
-  <ScreenGallery :screens="listS" />
-  <CardGallery :cards="listC.cards" :type="listC.key" />
+  <!-- <ScreenGallery :screens="listS" />
+  <CardGallery :cards="listC.cards" :type="listC.key" /> -->
+  <div v-for="(component, index) in components" :key="index">
+    <ScreenGallery v-if="component.type === 'ScreenGallery'" :screens="component.elements" />
+    <CardGallery v-else-if="component.type === 'CardGallery'" :cards="component.elements.cards" :type="component.elements.key" />
+  </div>
 </template>
 
 <style scoped>
