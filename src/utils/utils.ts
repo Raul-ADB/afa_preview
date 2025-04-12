@@ -30,6 +30,17 @@ const shortenPath = (url: string): string => {
   return url;
 }
 
+const getBaseUrl = (url: string): string => {
+  const pathParts = url.split("/").filter(part => part !== "");
+  const langIndex = pathParts.findIndex(part => part.length === 2);
+
+  if (langIndex !== -1) {
+    return url.split(pathParts[langIndex])[0];
+  }
+
+  return url;
+};
+
 const handleScroll = (navbar: HTMLElement, navMenu: HTMLElement, menu: HTMLElement) : void => {
   let lastScrollTop = 0;
   window.addEventListener('scroll', () => {
@@ -71,6 +82,7 @@ export {
   getRandomNumber,
   changeBackgroundImage,
   shortenPath,
+  getBaseUrl,
   handleScroll,
   toggleMenu,
   observeSentinel,

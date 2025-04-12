@@ -26,8 +26,6 @@
   };
   let availableKeys: string[] = [...Object.keys(typeGallery)];
 
-  let listS = ref<Screen[]>([]);
-  let listC = ref<{ key: string; cards: Card[] }>({ key: '', cards: [] });
   const components = ref<Component[]>([]);
 
   const makeScreenGallery = () => {
@@ -43,7 +41,6 @@
       });
     }
     arrayScreenGallery.push(screenList);
-    return screenList;
   };
 
   function getRandomKey(): string {
@@ -73,12 +70,9 @@
       cList.splice(random, 1)[0];
     }
     arrayCardGallery.push({ key: randomKey, cards: cardList });
-    return { key: randomKey, cards: cardList };
   };
 
   onMounted(() => {
-    /* listS.value = makeScreenGallery();
-    listC.value = makeCardGallery(); */
     const copyScreens = JSON.parse(JSON.stringify(fullscreens));
     const copyCards = JSON.parse(JSON.stringify(cards));
     for (let index = 0; index < 20; index++) {
@@ -104,13 +98,10 @@
 </script>
 
 <template>
-  <!-- <ScreenGallery :screens="listS" />
-  <CardGallery :cards="listC.cards" :type="listC.key" /> -->
+
   <div v-for="(component, index) in components" :key="index">
     <ScreenGallery v-if="component.type === 'ScreenGallery'" :screens="component.elements" />
     <CardGallery v-else-if="component.type === 'CardGallery'" :cards="component.elements.cards" :type="component.elements.key" />
   </div>
-</template>
 
-<style scoped>
-</style>
+</template>

@@ -1,5 +1,6 @@
 <script setup>
 
+  import { getBaseUrl } from '@/utils/utils';
   import { onMounted } from 'vue';
 
   const props = defineProps({
@@ -8,6 +9,10 @@
       required: true
     }
   });
+
+  const currentLang = document.documentElement.lang || 'es';
+  const currentUrl = window.location.href;
+  const baseUrl = getBaseUrl(currentUrl);
 
   onMounted(() => {
     const screens = document.querySelectorAll('.screen');
@@ -24,7 +29,7 @@
 
 <template>
   <div class="screen" :data-image="screen.image">
-    <a class="screen__title" :href="screen.cta">
+    <a class="screen__title" :href="`${baseUrl}${currentLang}/${screen.cta}`">
       <h4>{{screen.project_title}}</h4>
     </a>
   </div>
