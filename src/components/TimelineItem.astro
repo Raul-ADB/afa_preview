@@ -5,7 +5,7 @@ import { useTranslation } from '@/utils/utils';
 
 const currentLang = Astro.currentLocale || 'es';
 const translateUI = useTranslation(currentLang as keyof typeof languageList);
-const { id, year, title, tags, description } = Astro.props;
+const { id, year, title, tags, descriptions = [] } = Astro.props;
 ---
 
 <div class={`timeline__element timeline__element--${id}`}>
@@ -13,7 +13,11 @@ const { id, year, title, tags, description } = Astro.props;
   <div class="element__text">
     <p class="element__title">{title}</p>
     <p class="element__tags">{tags.join(' / ')}</p>
-    <p class="element__description">{translateUI(description)}</p>
+    {
+      descriptions.map((description:string) => (
+        <p class="element__description">{translateUI(description)}</p>
+      ))
+    }
   </div>
 </div>
 
@@ -87,7 +91,7 @@ const { id, year, title, tags, description } = Astro.props;
     }
 
     .timeline__element:last-child .element__year::before {
-      height: 65%;
+      height: 55%;
     }
   }
 

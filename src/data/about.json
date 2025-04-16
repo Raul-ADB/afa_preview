@@ -20,28 +20,40 @@
       "timelineTitle": "EXPERIENCIA PROFESIONAL",
       "timelineElements": [
         {
-          "title": "The Palm Dubai - Hospitality Under Development",
+          "title": "United Arab Emirates - Hospitality (Under Development)",
           "year": "2025",
           "tags": ["Master Plan","Hospitality","Residential","Wellness"],
-          "description": "timeline.description1"
+          "descriptions": ["timeline.description1"]
         },
         {
-          "title": "Punta Colorada, Baja California Sur.",
+          "title": "Alonso Fernández Amador (AFA Studio)",
           "year": "2024",
-          "tags": ["Residential","Master Plan","Typologies","+1,200 sqm (3)","Pitch"],
-          "description": "timeline.description2"
+          "tags": ["Founder + Creative Director"],
+          "descriptions": ["timeline.description2","timeline.description2B"]
         },
         {
-          "title": "SURFOS - Punta Mita Resort",
+          "title": "AFA_Casas Punta Colorada, Baja California Sur.",
+          "year": "2024",
+          "tags": ["Residential","Master Plan","Typologies","+1,200 sqm (3)","Design Proposal, Pitch."],
+          "descriptions": ["timeline.description3"]
+        },
+        {
+          "title": "Estudio Esterlina + AFA_Surfos - Punta Mita Resort",
           "year": "2024",
           "tags": ["Residential","Interiorism","600 sqm"],
-          "description": "timeline.description3"
+          "descriptions": ["timeline.description4"]
+        },
+        {
+          "title": "AFA_Casa Provincia",
+          "year": "2024",
+          "tags": ["Residential","Schematic - Executive","450 sqm"],
+          "descriptions": ["timeline.description5"]
         },
         {
           "title": "Taller de Arquitectura | Mauricio Rocha",
           "year": "2024",
-          "tags": ["Residential","Schematic - Executive","450 sqm"],
-          "description": "timeline.description4"
+          "tags": ["Junior Architect - Project Manager."],
+          "descriptions": ["timeline.description6","timeline.description6B"]
         }
       ]
     },
@@ -53,25 +65,25 @@
           "title": "PGD, Creative Potential ACTO Arquitectura, Mexico City",
           "year": "2021",
           "tags": [],
-          "description": ""
+          "descriptions": ""
         },
         {
           "title": "",
           "year": "2020",
           "tags": [],
-          "description": "BArch, Architecture and Urbanism - exchange programme. Universidad Politécnica de Cataluña, ETSAB, Barcelona"
+          "descriptions": "BArch, Architecture and Urbanism - exchange programme. Universidad Politécnica de Cataluña, ETSAB, Barcelona"
         },
         {
           "title": "",
           "year": "2019",
           "tags": [],
-          "description": ""
+          "descriptions": ""
         },
         {
           "title": "BArch, Architecture and Urbanism Iberoamerican University, Mexico City",
           "year": "2016",
           "tags": [],
-          "description": ""
+          "descriptions": ""
         }
       ]
     }

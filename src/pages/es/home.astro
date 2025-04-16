@@ -12,13 +12,20 @@ const translateUI = useTranslation(currentLang as keyof typeof languageList);
 ---
 
 <Layout pageTitle='Home'>
-  <RandomHome client:load/>
+  <section class="home__random-layout">
+    <RandomHome client:load/>
+  </section>
   <section class="home__cta">
     <a href={getRelativeLocaleUrl(currentLang, "/home")}>{translateUI("home.button")}</a>
   </section>
 </Layout>
 
 <style>
+
+  .home__random-layout {
+    min-height: 500vh;
+    height: max-content;
+  }
 
   .home__cta {
     display: flex;
