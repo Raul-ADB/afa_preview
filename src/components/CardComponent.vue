@@ -16,15 +16,15 @@
 <template>
 
   <div class="card" :class="`card--${card.cardNumber} card--${card.type}`">
-    <figure class="card__picture">
-      <img :src="card.url" class="card__image" :alt="`Imagen ${card.name}`" loading="lazy" >
-    </figure>
-    <div class="card__body">
-      <a class="card__link" :href="`${url}${card.cta}`" target="_blank" rel="noopener noreferrer">
+    <a class="card__link" :href="`${url}${card.cta}`" >
+      <figure class="card__picture">
+        <img :src="card.url" class="card__image" :alt="`Imagen ${card.name}`" loading="lazy" >
+      </figure>
+      <div class="card__body">
         <h3 class="card__title">{{card.project_title}}</h3>
-      </a>
-      <p class="card__description">{{card.description}}</p>
-    </div>
+        <p class="card__description">{{card.description}}</p>
+      </div>
+    </a>
   </div>
 
 </template>
@@ -39,9 +39,6 @@
     padding: 1rem;
     background-color: #f1f1f1;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
   }
 
   .card--external {
@@ -61,6 +58,17 @@
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%);
+  }
+
+  .card__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .card__link:visited {
