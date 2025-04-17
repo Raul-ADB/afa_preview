@@ -20,9 +20,9 @@ interface Options extends HeroOptionsInterface {};
 const { tool } = Astro.params;
 
 const items = tool === 'sketch' ? itemsSketch : (tool === 'diagram') ? itemsDiagram : itemsModels;
-const hero = tool === 'sketch' ? 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112056/portadaAT_u14b2d.jpg' : (tool === 'diagram') ? 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743196796/AD00_j9juuv.jpg' : 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743196952/AM00_fnskp5.jpg';
-const heroAlt = tool === 'sketch' ? 'Imagen Galería Mobile' : 'Imagen Galería Film';
-const legend= 'ESTUDIOS DE FORMAS Y ESPACIO';
+const hero = tool === 'sketch' ? 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743196815/AT05_hgm1hn.jpg' : (tool === 'diagram') ? 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743196796/AD00_j9juuv.jpg' : 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743196952/AM00_fnskp5.jpg';
+const heroAlt = tool === 'sketch' ? 'Image AFA Sketch' : (tool === 'diagram') ? 'Image AFA Diagram' : 'Image AFA Models';
+const legend= 'prototype.legend';
 const options:Options[] =  [
   {
     name: 'Sketches',

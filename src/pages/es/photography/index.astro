@@ -3,13 +3,12 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import Layout from '@/layouts/Layout.astro';
 import HeroGallery from '@/components/HeroGallery.astro';
 import type { HeroOptionsInterface } from '@/types/types';
-import { optional } from 'astro:schema';
 
 interface Options extends HeroOptionsInterface {};
 
 const hero = 'https://res.cloudinary.com/dhojdq7qf/image/upload/v1743112055/portadaAP_cfzkxx.jpg';
-const heroAlt = 'Imagen Galería AFA';
-const legend = 'Por el lente de: Alonso Fernández Amador';
+const heroAlt = 'Image AFA Photography';
+const legend = '';
 const options:Options[] =  [
   {
     name: 'Shot on iPhone',

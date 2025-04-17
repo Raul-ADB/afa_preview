@@ -12,6 +12,9 @@ export const ui = {
 
     'home.button': 'Ver más',
 
+    'photography.legend': 'Fotografía por: Alonso Fernández Amador',
+    'prototype.legend': 'ESTUDIOS DE FORMAS Y ESPACIO',
+
     'afa.work1': 'FOTOGRAFÍA AFA',
     'afa.work2': 'PUNTA COLORADA',
     'afa.work3': 'TMR CASA COMPORTA',
@@ -82,6 +85,9 @@ export const ui = {
     '404.button': 'Go back to home',
 
     'home.button': 'View more',
+
+    'photography.legend': 'Photography by: Alonso Fernández Amador',
+    'prototype.legend': 'STUDIES OF FORM AND SPACE',
 
     'afa.work1': 'AFA PHOTOGRAPHY',
     'afa.work2': 'PUNTA COLORADA',
