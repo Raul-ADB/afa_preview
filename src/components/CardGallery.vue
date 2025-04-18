@@ -56,10 +56,11 @@
 
   @media (width >= 768px) {
     .card__gallery--A {
-      grid-template-rows: repeat(9, 25rem);
+      grid-template-rows: repeat(10, 25rem);
       grid-template-areas:
         "a1 a1 a1 a1"
         "a1 a1 a1 a1"
+        "a2 a2 a4 a4"
         "a2 a2 a4 a4"
         "a3 a3 a3 a3"
         "a3 a3 a3 a3"
@@ -93,13 +94,14 @@
 
   @media (width >= 768px) {
     .card__gallery--B {
-      grid-template-rows: repeat(12, 12rem);
+      grid-template-rows: repeat(13, 12rem);
       grid-template-areas:
         "a1 a1 a1 a1"
         "a1 a1 a1 a1"
         "a1 a1 a1 a1"
         "a2 a2 a4 a4"
         "a2 a2 a4 a4"
+        "a3 a3 a4 a4"
         "a3 a3 a4 a4"
         "a5 a5 a6 a6"
         "a5 a5 a6 a6"
@@ -119,10 +121,10 @@
         "a1 a1 a1 a1 a1 a1"
         "a1 a1 a1 a1 a1 a1"
         "a1 a1 a1 a1 a1 a1"
-        "a2 a2 a2 a2 a4 a4"
-        "a2 a2 a2 a2 a4 a4"
-        "a3 a3 a3 a3 a4 a4"
-        "a3 a3 a3 a3 a4 a4"
+        "a2 a2 a4 a4 a4 a4"
+        "a2 a2 a4 a4 a4 a4"
+        "a3 a3 a4 a4 a4 a4"
+        "a3 a3 a4 a4 a4 a4"
         "a5 a5 a6 a6 a7 a7"
         "a5 a5 a6 a6 a7 a7"
         "a5 a5 a6 a6 a7 a7"
@@ -140,13 +142,14 @@
 
   @media (width >= 768px) {
     .card__gallery--C {
-      grid-template-rows: repeat(12, 12rem);
+      grid-template-rows: repeat(13, 12rem);
       grid-template-areas:
         "a1 a1 a2 a2"
         "a1 a1 a2 a2"
         "a1 a1 a2 a2"
         "a3 a3 a6 a6"
         "a3 a3 a6 a6"
+        "a4 a4 a7 a7"
         "a4 a4 a7 a7"
         "a5 a5 a8 a8"
         "a5 a5 a8 a8"
@@ -238,6 +241,20 @@
   }
 
   @media (width >= 768px) {
+    .card__gallery--E {
+      grid-template-rows: repeat(6, 24rem);
+      grid-template-areas:
+        "a1 a1 a1 a1"
+        "a1 a1 a1 a1"
+        "a2 a2 a3 a3"
+        "a2 a2 a3 a3"
+        "a4 a4 a4 a4"
+        "a4 a4 a4 a4"
+      ;
+    }
+  }
+
+  @media (width >= 992px) {
     .card__gallery--E {
       grid-template-rows: repeat(6, 24rem);
       grid-template-areas:

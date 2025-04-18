@@ -115,6 +115,7 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
       width: 50%;
       flex-direction: row;
       align-self: flex-end;
+      gap: 2rem;
     }
   }
 
@@ -133,6 +134,7 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
       width: 50%;
       flex-direction: row;
       align-self: flex-end;
+      gap: 1rem;
     }
   }
 
@@ -161,7 +163,7 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
 
   @media (width >= 992px) {
     .project__metadata {
-      width: 35%;
+      width: 38%;
     }
   }
 
@@ -173,7 +175,7 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
     text-align-last: left;
     text-wrap: balance;
     hyphens: auto;
-    hyphenate-limit-chars: 10;
+    hyphenate-limit-chars: 3 2 5;
   }
 
   @media (width >= 768px) {
@@ -184,7 +186,7 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
 
   @media (width >= 992px) {
     .project__description {
-      width: 65%;
+      width: 62%;
     }
   }
 
@@ -195,8 +197,6 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
     text-align: justify;
     text-align-last: left;
     text-wrap: balance;
-    hyphens: auto;
-    hyphenate-limit-chars: 10;
   }
 
   .project__meta {

@@ -17,7 +17,7 @@ export const ui = {
 
     'afa.work1': 'FOTOGRAFÍA AFA',
     'afa.work2': 'PUNTA COLORADA',
-    'afa.work3': 'TMR CASA COMPORTA',
+    'afa.work3': 'TMR - CASA COMPORTA',
     'afa.work4': 'GHOST MARFA',
     'afa.work5': 'MERCADO TACUBAYA',
     'afa.work6': 'SKECHES, DIAGRAMAS Y MAQUETAS',
@@ -91,7 +91,7 @@ export const ui = {
 
     'afa.work1': 'AFA PHOTOGRAPHY',
     'afa.work2': 'PUNTA COLORADA',
-    'afa.work3': 'TMR CASA COMPORTA',
+    'afa.work3': 'TMR - CASA COMPORTA',
     'afa.work4': 'GHOST MARFA',
     'afa.work5': 'MERCADO TACUBAYA',
     'afa.work6': 'SKETCHES, DIAGRAMS AND MODELS',

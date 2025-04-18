@@ -75,7 +75,7 @@
   const createRandomLayout = () => {
     const copyScreens = JSON.parse(JSON.stringify(fullscreens));
     const copyCards = JSON.parse(JSON.stringify(cards));
-    for (let index = 0; index < 20; index++) {
+    for (let index = 0; index < (getRandomNumber(10) + 10); index++) {
       if (index % 2 === 0) {
         makeScreenGallery();
         components.value.push({
