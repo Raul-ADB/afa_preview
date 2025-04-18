@@ -12,11 +12,13 @@
     }
   });
 
+ const singleElementClass = props.screens.length === 1 ? 'screen__gallery--single' : '';
+
 </script>
 
 <template>
 
-  <section class="screen__gallery mb">
+  <section class="screen__gallery mb" :class="[singleElementClass]">
     <ScreenComponent v-for="item in props.screens" :key="item.name" :screen="item" />
   </section>
 
@@ -30,6 +32,11 @@
     display: flex;
     flex-direction: column;
     gap: 5rem;
+  }
+
+  .screen__gallery--single{
+    justify-content: center;
+    gap: 0;
   }
 
 </style>
