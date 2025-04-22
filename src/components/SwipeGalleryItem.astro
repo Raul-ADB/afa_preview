@@ -164,13 +164,16 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
     color: #000;
   }
 
-  .sg__item--casa_comporta.sg__item--4::before {
-    content: 'Volumetric Analysis, Bungalows.';
+  @media (width >= 768px) { 
+    .sg__item--casa_comporta.sg__item--4::before {
+      content: 'Volumetric Analysis, Bungalows.';
+    }
+
+    .sg__item--casa_comporta.sg__item--5::before {
+      content: 'Volumetric Analysis, Private Programme';
+    }
   }
 
-  .sg__item--casa_comporta.sg__item--5::before {
-    content: 'Volumetric Analysis, Private Programme';
-  }
 
   .sg__item--casa_comporta.sg__item--4 .sg__img,
   .sg__item--casa_comporta.sg__item--5 .sg__img {
@@ -258,6 +261,13 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
     .sg__item--casa_comporta.sg__item--12 .sg__img,
     .sg__item--casa_comporta.sg__item--13 .sg__img {
       height: 31.5rem;
+    }
+
+    .sg__item--casa_comporta.sg__item--6,
+    .sg__item--casa_comporta.sg__item--7,
+    .sg__item--casa_comporta.sg__item--8,
+    .sg__item--casa_comporta.sg__item--9 {
+      margin-bottom: 2rem;
     }
 
     .sg__item--casa_comporta.sg__item--6,
@@ -450,6 +460,11 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
       margin-left: 1rem;
     }
   
+    .sg__item--casa_comporta.sg__item--14,
+    .sg__item--casa_comporta.sg__item--15 {
+      margin-bottom: 2rem;
+    }
+
     .sg__item--casa_comporta.sg__item--16,
     .sg__item--casa_comporta.sg__item--17 {
       margin-bottom: 5rem;
@@ -478,14 +493,20 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
   }
 
   @media (width >= 768px) {
+    .sg__item--casa_comporta.sg__item--18 {
+      margin-right: 1rem;
+    }
+
     .sg__item--casa_comporta.sg__item--19 {
       margin-bottom: 1rem;
+      margin-left: 1rem;
     }
-  
+
     .sg__item--casa_comporta.sg__item--20 {
       margin-top: 1rem;
+      margin-left: 1rem;
     }
-  
+
     .sg__item--casa_comporta.sg__item--18,
     .sg__item--casa_comporta.sg__item--20,
     .sg__item--casa_comporta.sg__item--26,
@@ -502,7 +523,6 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
       margin-bottom: 5rem;
     }
   }
-
 
   .sg__item--casa_comporta.sg__item--21::before {
     content: 'Facade Study';
@@ -521,11 +541,11 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
     .sg__item--casa_comporta.sg__item--21 {
       margin-right: 1rem;
     }
-  
+
     .sg__item--casa_comporta.sg__item--22 {
       margin-left: 1rem;
     }
-  
+
     .sg__item--casa_comporta.sg__item--21,
     .sg__item--casa_comporta.sg__item--22,
     .sg__item--casa_comporta.sg__item--23 {
@@ -604,6 +624,7 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
     .sg__item--punta_colorada.sg__item--1,
     .sg__item--punta_colorada.sg__item--2 {
       width: 80%;
+      height: 100%;
     }
 
     .sg__item--punta_colorada.sg__item--4 {
