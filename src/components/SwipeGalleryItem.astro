@@ -25,9 +25,11 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
 <style>
 
   .sg__item {
+    width: 100%;
+    height: 100%;
     display: inline-block;
     background-color: #f1f1f1;
-    padding: 1rem;
+    overflow: hidden;
   }
 
   .sg__img {
@@ -102,6 +104,25 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
     margin-bottom: 5rem;
   }
 
+  .sg__item--casa_comporta.sg__item--6,
+  .sg__item--casa_comporta.sg__item--7,
+  .sg__item--casa_comporta.sg__item--8,
+  .sg__item--casa_comporta.sg__item--9,
+  .sg__item--casa_comporta.sg__item--10,
+  .sg__item--casa_comporta.sg__item--11,
+  .sg__item--casa_comporta.sg__item--12,
+  .sg__item--casa_comporta.sg__item--13,
+  .sg__item--casa_comporta.sg__item--14,
+  .sg__item--casa_comporta.sg__item--15,
+  .sg__item--casa_comporta.sg__item--16,
+  .sg__item--casa_comporta.sg__item--17,
+  .sg__item--casa_comporta.sg__item--18,
+  .sg__item--casa_comporta.sg__item--19,
+  .sg__item--casa_comporta.sg__item--20,
+  .sg__item--casa_comporta.sg__item--21,
+  .sg__item--casa_comporta.sg__item--22 {
+    padding: 1rem 1rem 0 1rem;
+  }
 
   .sg__item--casa_comporta.sg__item--1,
   .sg__item--casa_comporta.sg__item--2,
@@ -125,8 +146,13 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
   }
 
   .sg__item--casa_comporta.sg__item--1 {
-    margin-block: 5rem 2rem;
     position: relative;
+  }
+  
+  @media (width >= 768px) {
+    .sg__item--casa_comporta.sg__item--1 {
+      margin-block: 5rem 2rem;
+    }
   }
 
   .sg__item--casa_comporta.sg__item--1::before {
@@ -173,7 +199,6 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
       content: 'Volumetric Analysis, Private Programme';
     }
   }
-
 
   .sg__item--casa_comporta.sg__item--4 .sg__img,
   .sg__item--casa_comporta.sg__item--5 .sg__img {
@@ -404,6 +429,18 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
     bottom: 10%;
     color: #000;
   }
+
+  @media (width <= 768px) {
+    .sg__item--casa_comporta.sg__item--14::before,
+    .sg__item--casa_comporta.sg__item--16::before,
+    .sg__item--casa_comporta.sg__item--17::before {
+      max-width: 95%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
 
   .sg__item--casa_comporta.sg__item--14::after,
   .sg__item--casa_comporta.sg__item--15::after,
