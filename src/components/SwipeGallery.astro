@@ -186,24 +186,32 @@ interface Props {
     .swipe-gallery--mercado_tacubaya {
       gap: 0;
       grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(18, 45rem);
+      grid-template-rows: repeat(8, 45rem 45rem 5rem) repeat(2, 45rem);
       grid-template-areas:
       "a1 a1 a1 a2 a2 a2"
       "a3 a3 a3 a2 a2 a2"
+      "m1 m1 m1 m1 m1 m1"
       "a4 a4 a4 a5 a5 a5"
       "a4 a4 a4 a6 a6 a6"
+      "m2 m2 m2 m2 m2 m2"
       "a7 a7 a7 a8 a8 a8"
       "a9 a9 a9 a8 a8 a8"
+      "m3 m3 m3 m3 m3 m3"
       "a10 a10 a10 a11 a11 a11"
       "a10 a10 a10 a11 a11 a11"
+      "m4 m4 m4 m4 m4 m4"
       "a12 a12 a12 a13 a13 a13"
       "a12 a12 a12 a13 a13 a13"
+      "m5 m5 m5 m5 m5 m5"
       "a14 a14 a14 a15 a15 a15"
       "a14 a14 a14 a16 a16 a16"
+      "m6 m6 m6 m6 m6 m6"
       "a17 a17 a17 a17 a17 a17"
       "a17 a17 a17 a17 a17 a17"
+      "m7 m7 m7 m7 m7 m7"
       "a18 a18 a18 a18 a18 a18"
       "a18 a18 a18 a18 a18 a18"
+      "m8 m8 m8 m8 m8 m8"
       "a19 a19 a19 a19 a19 a19"
       "a19 a19 a19 a19 a19 a19"
       ;
@@ -219,42 +227,51 @@ interface Props {
     .swipe-gallery--casa_comporta {
       gap: 0;
       grid-template-columns: repeat(8, 1fr);
-      grid-template-rows: 37rem 30rem 23rem 90rem 90rem 42rem 45rem 42rem 45rem 40rem 45rem 50rem 80rem 30rem 30rem 35rem 90rem 90rem 80rem 90rem 90rem 90rem 90rem 90rem 90rem;
+      grid-template-rows: 30rem 2rem 30rem 28rem 80rem 5rem 90rem 5rem 40rem 2rem 40rem 5rem 40rem 2rem 40rem 5rem 45rem 45rem 5rem 45rem 5rem 80rem 5rem 30rem 30rem 30rem 5rem 80rem 5rem 80rem 5rem 80rem 5rem 80rem 5rem 80rem 5rem 80rem 5rem 80rem 5rem 80rem 5rem 80rem;
       grid-template-areas:
       "a1 a1 a1 a1 a1 a1 a1 a1"
+      "m1 m1 m1 m1 m1 m1 m1 m1"
       "a2 a2 a2 a2 a2 a2 a2 a2"
-
-      "__ __ __ __ __ __ __ __"
-
+      "m2 m2 m2 m2 m2 m2 m2 m2"
       "a3 a3 a3 a3 a3 a3 a3 a3"
-
+      "m3 m3 m3 m3 m3 m3 m3 m3"
       "a4 a4 a4 a4 a5 a5 a5 a5"
-
+      "m4 m4 m4 m4 m4 m4 m4 m4"
       "a6 a6 a7 a7 a8 a8 a9 a9"
+      "m5 m5 m5 m5 m5 m5 m5 m5"
       "a10 a10 a11 a11 a12 a12 a13 a13"
-
+      "m6 m6 m6 m6 m6 m6 m6 m6"
       "a14 a14 a14 a14 a15 a15 a15 a15"
+      "m7 m7 m7 m7 m7 m7 m7 m7"
       "a16 a16 a16 a16 a17 a17 a17 a17"
-
+      "m8 m8 m8 m8 m8 m8 m8 m8"
       "a18 a18 a18 a18 a19 a19 a19 a19"
       "a18 a18 a18 a18 a20 a20 a20 a20"
-
+      "m9 m9 m9 m9 m9 m9 m9 m9"
       "a21 a21 a21 a21 a22 a22 a22 a22"
-
+      "m10 m10 m10 m10 m10 m10 m10 m10"
       "a23 a23 a23 a23 a23 a23 a23 a23"
-
+      "m11 m11 m11 m11 m11 m11 m11 m11"
       "a24 a24 a24 a24 a27 a27 a27 a27"
       "a25 a25 a25 a25 a27 a27 a27 a27"
       "a26 a26 a26 a26 a27 a27 a27 a27"
-
+      "m12 m12 m12 m12 m12 m12 m12 m12"
       "a28 a28 a28 a28 a28 a28 a28 a28"
+      "m13 m13 m13 m13 m13 m13 m13 m13"
       "a29 a29 a29 a29 a29 a29 a29 a29"
+      "m14 m14 m14 m14 m14 m14 m14 m14"
       "a30 a30 a30 a30 a30 a30 a30 a30"
+      "m15 m15 m15 m15 m15 m15 m15 m15"
       "a31 a31 a31 a31 a31 a31 a31 a31"
+      "m16 m16 m16 m16 m16 m16 m16 m16"
       "a32 a32 a32 a32 a32 a32 a32 a32"
+      "m17 m17 m17 m17 m17 m17 m17 m17"
       "a33 a33 a33 a33 a33 a33 a33 a33"
+      "m18 m18 m18 m18 m18 m18 m18 m18"
       "a34 a34 a34 a34 a34 a34 a34 a34"
+      "m19 m19 m19 m19 m19 m19 m19 m19"
       "a35 a35 a35 a35 a35 a35 a35 a35"
+      "m20 m20 m20 m20 m20 m20 m20 m20"
       "a36 a36 a36 a36 a36 a36 a36 a36"
       ;
     }

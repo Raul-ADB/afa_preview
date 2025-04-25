@@ -41,8 +41,7 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
 <style>
 
   .main {
-    margin-top: 10rem;
-    margin-bottom: 5rem;
+    margin-block: 10rem;
   }
 
   .project {
@@ -52,15 +51,10 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
     gap: 2.4rem;
   }
 
-  @media (width >= 768px) {
+  @media (width >= 992px) {
     .project {
       flex-direction: row;
       height: max-content;
-    }
-  }
-
-  @media (width >= 992px) {
-    .project {
       height: 90rem;
       gap: 4rem;
     }
@@ -77,7 +71,7 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
     width: 100%;
   }
 
-  @media (width >= 768px) {
+  @media (width >= 992px) {
     .project__image {
       align-self: flex-start;
       width: 50%;
@@ -100,13 +94,6 @@ const {project_title = '', project_meta= [], project_description = [], image_nam
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
-  }
-
-  @media (width >= 768px) {
-    .project__content {
-      height: 100%;
-      width: 50%;
-    }
   }
 
   @media (width >= 992px) {
