@@ -95,18 +95,7 @@
   }
 
   onMounted(() => {
-    if (typeof window === 'undefined') return;
-    let counter = parseInt(sessionStorage.getItem('counter') || '0');
-    if (counter % 2 === 0) {
-      createRandomLayout();
-      sessionStorage.setItem('components', JSON.stringify(components.value));
-    } else {
-      const storedComponents = sessionStorage.getItem('components');
-      if (storedComponents) {
-        components.value = JSON.parse(storedComponents);
-      }
-    }
-    sessionStorage.setItem('counter', (counter + 1).toString());
+    createRandomLayout();
   });
 
 </script>

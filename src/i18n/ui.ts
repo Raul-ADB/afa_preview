@@ -38,6 +38,8 @@ export const ui = {
     'contact.message': 'Mensaje',
     'contact.send': 'Enviar',
 
+    'timeline.titlework': 'EXPERIENCIA PROFESIONAL',
+    'timeline.education': 'EDUCACIÓN',
     'timeline.description1': 'AFA y el estudio romano MORQ Architecture colaboran en un plan maestro de hospitalidad y desarrollo de proyecto. Club de playa, residencias, bazar y centro de bienestar que armoniza con el paisaje árido del desierto emiratí. El enfoque de AFA en el proyecto está en las Residencias, cuatro villas de lujo con cuatro habitaciones. Este proyecto encarna el lujo a través de una propuesta de diseño resiliente y sostenible, contrastando con los enfoques arquitectónicos audaces característicos del contexto.',
     'timeline.description2': 'La práctica de AFA está arraigada en enfoques ancestrales para la comprensión programática. Sistemas tradicionales de conocimiento que contribuyen a la arquitectura contemporánea con la más alta expresión de las artes. La tarea interminable de la experimentación arquitectónica transformadora al presentar obra. Ya sea física o digital, AFA entiende que estas técnicas enriquecen el enfoque de diseño.',
     'timeline.description2B': 'Fundado en 2024 en la Ciudad de México, el estudio AFA ya ha sustentado varios proyectos, dos de los cuales están previstos para construcción en 2025.',
@@ -112,6 +114,8 @@ export const ui = {
     'contact.message': 'Message',
     'contact.send': 'Send',
 
+    'timeline.titlework': 'PROFESSIONAL EXPERIENCE',
+    'timeline.education': 'EDUCATION',
     'timeline.description1': 'AFA and the Roman-based studio, MORQ Architecture, collaborate in a hospitality master plan and project development. Beach club, residences, bazaar, and wellness center that harmonizes with the arid landscape of the Emirati desert. AFA’s focus on the project is on the Residences, four luxury four bedroom villas. This project embodies luxury through a resilient, sustainable design proposition, contrasting the bold architectural approaches characteristic of the context.',
     'timeline.description2': 'AFA practice is rooted in ancestral approaches to programatic understanding. Traditional systems of knowledge that contribute to contemporary architecture with the highest expression of the arts. The never ending task of transformative architectural experimentation of presenting work. Wether its physical or digital, AFA understands these techniques enrich the design approach.',
     'timeline.description2B': 'Founded in 2024 in Mexico City, AFA studio has already underpinned various projects, two of them are set out for construction in 2025.',

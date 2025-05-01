@@ -1,11 +1,17 @@
 ---
 import TimelineItem from './TimelineItem.astro';
+import { languageList } from '@/i18n/ui';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslation, shortenPath } from '@/utils/utils';
+
+const currentLang = Astro.currentLocale || 'es';
+const translateUI = useTranslation(currentLang as keyof typeof languageList);
 
 const {timelineTitle} = Astro.props; 
 ---
 
 <section class="timeline">
-  <h4 class="timeline__title">{timelineTitle}</h4>
+  <h4 class="timeline__title">{translateUI(timelineTitle)}</h4>
   <div class="timeline__body">
     <slot/>
   </div>

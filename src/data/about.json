@@ -17,7 +17,7 @@
     ],
     "professionalTimeline": {
       "timelineId":"TLEP",
-      "timelineTitle": "EXPERIENCIA PROFESIONAL",
+      "timelineTitle": "timeline.titlework",
       "timelineElements": [
         {
           "title": "United Arab Emirates - Hospitality (Under Development)",
