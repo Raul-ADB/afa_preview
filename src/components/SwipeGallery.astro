@@ -51,7 +51,12 @@ interface Props {
 
   @media (width >= 768px) {
     .swipe-gallery--mobile {
+      display: grid;
+      grid-auto-flow: dense;
       grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto;
+      gap: 1rem;
+      /* grid-template-columns: repeat(6, 1fr);
       grid-template-rows: 80rem 55rem 55rem 55rem 80rem 55rem 80rem 80rem 80rem 80rem 55rem 80rem 55rem 55rem 80rem;
       grid-template-areas:
       "a1 a1 a1 a1 a1 a1"
@@ -69,7 +74,7 @@ interface Props {
       "a24 a24 a24 a24 a25 a25"
       "a26 a26 a27 a27 a28 a28"
       "a29 a29 a29 _ _ _"
-      ;
+      ; */
     }
   }
 

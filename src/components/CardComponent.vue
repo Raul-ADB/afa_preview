@@ -158,7 +158,7 @@
 
   .card--29 {grid-area: a29;}
 
-  .card--screen {
+  .card--vps {
     display: block;
     width: 100%;
     height: 100%;
@@ -166,29 +166,29 @@
   }
 
   .card--g-item .card__picture,
-  .card--screen .card__picture {
+  .card--vps .card__picture {
     width: 100%;
     height: 100%;
     overflow: hidden;
   }
 
-  .card--screen .card__image {
+  .card--vps .card__image {
     width: 100%;
     height: 100%;
   }
 
-  .card--screen .card__body {
+  .card--vps .card__body {
     position: absolute;
     top: 2rem;
     left: 2rem;
     z-index: 100;
   }
 
-  .card--screen .card__description {
+  .card--vps .card__description {
     display: none;
   }
 
-  .card--screen .card__title {
+  .card--vps .card__title {
     color: #FFF;
     background-color: #000;
   }
