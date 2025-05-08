@@ -78,6 +78,42 @@ const { origin='', name = '', href = '', src ='', width = '', height = '', itemN
   .sg__item--39 { grid-area: a39;}
   .sg__item--40 { grid-area: a40;}
 
+  
+  .sg__item--mobile {
+    grid-area: unset;
+  }
+
+  @media (width >= 768px) {
+    .sg__item--mobile:nth-child(5n + 1) {
+      grid-column: span 2;
+    }
+  
+    .sg__item--mobile:nth-child(5n + 2),
+    .sg__item--mobile:nth-child(5n + 3),
+    .sg__item--mobile:nth-child(5n + 4),
+    .sg__item--mobile:nth-child(5n + 5) {
+      grid-column: span 1;
+    }
+  }
+
+  @media (width >= 992px) {
+    .sg__item--mobile:nth-child(8n + 1) {
+      grid-column: span 3;
+    }
+  
+    .sg__item--mobile:nth-child(8n + 2),
+    .sg__item--mobile:nth-child(8n + 8) {
+      grid-column: span 2;
+    }
+  
+    .sg__item--mobile:nth-child(8n + 3),
+    .sg__item--mobile:nth-child(8n + 4),
+    .sg__item--mobile:nth-child(8n + 5),
+    .sg__item--mobile:nth-child(8n + 6),
+    .sg__item--mobile:nth-child(8n + 7) {
+      grid-column: span 1;
+    }
+  }
 
   .sg__item--ghost_marfa,
   .sg__item--mercado_tacubaya,
