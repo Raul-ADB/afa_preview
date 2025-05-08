@@ -64,9 +64,16 @@ const currentLang = Astro.currentLocale || 'es';
   }
 
   .main__picture {
-    width: 14rem;
-    height: 6.5rem;
+    width: 12rem;
+    height: 5.2rem;
     cursor: pointer;
+  }
+
+  @media (width >= 768px) {
+    .main__picture {
+      width: 14rem;
+      height: 6.5rem;
+    }
   }
 
   .main__img {
