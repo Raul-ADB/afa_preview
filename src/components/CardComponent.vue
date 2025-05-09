@@ -1,8 +1,10 @@
 <script setup>
 
   import '@/styles/fonts.css';
-  import { getUrl } from '@/utils/utils';
+  import { getUrl, useTranslationVue } from '@/utils/utils';
+
   const props = defineProps({
+    lang: 'es' | 'en',
     card: {
       type: Object,
       required: true
@@ -10,6 +12,8 @@
   });
 
   const url = getUrl();
+
+  const { t } = useTranslationVue(props.lang);
 
 </script>
 
@@ -21,8 +25,8 @@
         <img :src="card.url" class="card__image" :alt="`Imagen ${card.name}`" loading="lazy" >
       </figure>
       <div class="card__body">
-        <h3 class="card__title">{{card.project_title}}</h3>
-        <p class="card__description">{{card.description}}</p>
+        <h3 class="card__title">{{ t(card.project_title) }}</h3>
+        <p class="card__description">{{ t(card.description) }}</p>
       </div>
     </a>
   </div>

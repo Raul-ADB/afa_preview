@@ -27,6 +27,7 @@
   let availableKeys: string[] = [...Object.keys(typeGallery)];
 
   const components = ref<Component[]>([]);
+  const lang = ref<'es' | 'en'>('es');
 
   const makeScreenGallery = () => {
     let screenList: Screen[] = [];
@@ -95,6 +96,8 @@
   }
 
   onMounted(() => {
+    const currentLang = document.documentElement.lang || 'es';
+    lang.value = currentLang;
     createRandomLayout();
   });
 
@@ -104,7 +107,7 @@
 
   <div v-for="(component, index) in components" :key="index">
     <ScreenGallery v-if="component.type === 'ScreenGallery'" :screens="component.elements" />
-    <CardGallery v-else-if="component.type === 'CardGallery'" :cards="component.elements.cards" :type="component.elements.key" />
+    <CardGallery v-else-if="component.type === 'CardGallery'" :lang="lang" :cards="component.elements.cards" :type="component.elements.key" />
   </div>
 
 </template>

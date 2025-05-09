@@ -3,6 +3,7 @@
   import CardComponent from '@/components/CardComponent.vue';
 
   const props = defineProps({
+    lang: 'es' | 'en',
     cards: {
       type: Array,
       required: true
@@ -21,6 +22,7 @@
     <CardComponent
       v-for="(card, index) in cards"
       :key="index"
+      :lang="lang"
       :card="card"
     />
   </section>

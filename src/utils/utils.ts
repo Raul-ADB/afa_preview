@@ -1,11 +1,20 @@
 import { ui } from "@/i18n/ui";
 
 const defaultLang = 'es';
+type LanguageKey = keyof typeof ui;
 
 const useTranslation = (lang: keyof typeof ui) => {
   return function translate(key: keyof typeof ui[typeof defaultLang]) {
     return ui[lang][key] || ui[defaultLang][key];
   }
+}
+
+const useTranslationVue = (lang: LanguageKey) => {
+  const t = (key: string): string => {
+    const translation = ui[lang]?.[key as keyof typeof ui[typeof lang]];
+    return translation || key;
+  };
+  return { t };
 }
 
 const getRandomNumber = (num: number): number => {
@@ -86,6 +95,7 @@ const setBackgroundImage = (element: HTMLElement, url: string): void => {
 
 export {
   useTranslation,
+  useTranslationVue,
   getRandomNumber,
   changeBackgroundImage,
   shortenPath,
