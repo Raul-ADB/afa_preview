@@ -6,6 +6,7 @@
   interface Screen extends ScreenInterface {}
 
   const props = defineProps({
+    lang: 'es' | 'en',
     screens: {
       type: Array<Screen>,
       required: true
@@ -19,7 +20,12 @@
 <template>
 
   <section class="screen__gallery mb" :class="[singleElementClass]">
-    <ScreenComponent v-for="item in props.screens" :key="item.name" :screen="item" />
+    <ScreenComponent
+      v-for="item in props.screens"
+      :key="item.name"
+      :lang="lang"
+      :screen="item"
+    />
   </section>
 
 </template>

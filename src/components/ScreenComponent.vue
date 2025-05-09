@@ -2,9 +2,10 @@
 
   import '@/styles/fonts.css';
   import { onMounted } from 'vue';
-  import { getUrl } from '@/utils/utils';
+  import { getUrl, useTranslationVue } from '@/utils/utils';
 
   const props = defineProps({
+    lang: 'es' | 'en',
     screen: {
       type: Object,
       required: true
@@ -12,6 +13,8 @@
   });
 
   const url = getUrl();
+
+  const { t } = useTranslationVue(props.lang);
 
   onMounted(() => {
     const screens = document.querySelectorAll('.screen');
@@ -24,12 +27,13 @@
       });
     }
   });
+
 </script>
 
 <template>
   <div class="screen" :data-image="screen.image">
     <a class="screen__title" :href="`${url}${screen.cta}`">
-      <h4>{{screen.project_title}}</h4>
+      <h4>{{ t(screen.project_title) }}</h4>
     </a>
   </div>
 </template>

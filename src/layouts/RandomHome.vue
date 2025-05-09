@@ -106,7 +106,7 @@
 <template>
 
   <div v-for="(component, index) in components" :key="index">
-    <ScreenGallery v-if="component.type === 'ScreenGallery'" :screens="component.elements" />
+    <ScreenGallery v-if="component.type === 'ScreenGallery'" :lang="lang" :screens="component.elements" />
     <CardGallery v-else-if="component.type === 'CardGallery'" :lang="lang" :cards="component.elements.cards" :type="component.elements.key" />
   </div>
 
