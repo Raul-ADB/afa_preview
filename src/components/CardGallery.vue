@@ -224,7 +224,7 @@
   /* GALLERY E */
 
   .card__gallery--E {
-    grid-template-rows: repeat(5, 27rem);
+    grid-template-rows: repeat(4, 27rem);
     grid-template-areas: "a1" "a2" "a3" "a4";
   }
 
