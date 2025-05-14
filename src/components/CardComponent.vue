@@ -61,7 +61,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
   }
 
   .card__link {
@@ -183,7 +183,7 @@
 
   .card--vps .card__body {
     position: absolute;
-    top: 2rem;
+    bottom: 2rem;
     left: 2rem;
     z-index: 100;
   }
